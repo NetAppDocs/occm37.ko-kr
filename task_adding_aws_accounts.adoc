@@ -1,0 +1,111 @@
+---
+sidebar: sidebar 
+permalink: task_adding_aws_accounts.html 
+keywords: permissions, aws, policy, iam, iam role, role, granting, policy, iam policy, iam user, access keys, arn, cloud provider accounts, aws, cloud provider profile, json, iam 
+summary: 다른 AWS 계정에 Cloud Volumes ONTAP를 구축하려는 경우 해당 계정에 필요한 권한을 제공한 다음 세부 정보를 Cloud Manager에 추가해야 합니다. 사용 권한을 제공하는 방법은 Cloud Manager에 AWS 키를 제공할지, 아니면 신뢰할 수 있는 계정에서 역할의 ARN을 제공하는지에 따라 달라집니다. 
+---
+= Cloud Manager에 AWS 계정 설정 및 추가
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+다른 AWS 계정에 Cloud Volumes ONTAP를 구축하려는 경우 필요한 권한을 제공하고 세부 정보를 Cloud Manager에 추가해야 합니다. 사용 권한을 제공하는 방법은 Cloud Manager에 AWS 키를 제공할지, 아니면 신뢰할 수 있는 계정에서 역할의 ARN을 제공하는지에 따라 달라집니다.
+
+
+NOTE: Cloud Central에서 Cloud Manager를 구축하면 Cloud Manager에서 구축한 AWS 계정이 자동으로 추가됩니다. 기존 시스템에 Cloud Manager 소프트웨어를 수동으로 설치한 경우에는 초기 계정이 추가되지 않습니다. link:concept_accounts_aws.html["AWS 계정 및 권한에 대해 알아보십시오"].
+
+* 선택 *
+
+* <<Granting permissions by providing AWS keys>>
+* <<Granting permissions by assuming IAM roles in other accounts>>
+
+
+
+
+== AWS 키를 제공하여 권한 부여
+
+Cloud Manager에 IAM 사용자를 위한 AWS 키를 제공하려면 해당 사용자에게 필요한 권한을 부여해야 합니다. Cloud Manager IAM 정책은 Cloud Manager에서 사용할 수 있는 AWS 작업 및 리소스를 정의합니다.
+
+.단계
+. 에서 Cloud Manager IAM 정책을 다운로드합니다 https://mysupport.netapp.com/cloudontap/iampolicies["Cloud Manager 정책 페이지"^].
+. IAM 콘솔에서 Cloud Manager IAM 정책의 텍스트를 복사하여 붙여넣어 고유한 정책을 생성합니다.
++
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html["AWS 설명서: IAM 정책 생성"^]
+
+. IAM 역할 또는 IAM 사용자에 정책을 연결합니다.
++
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create.html["AWS 설명서: IAM 역할 생성"^]
+** https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html["AWS 설명서: IAM 정책 추가 및 제거"^]
+
+
+
+
+이제 계정에 필요한 권한이 있습니다. <<Adding AWS accounts to Cloud Manager,이제 Cloud Manager에 추가할 수 있습니다>>.
+
+
+
+== 다른 계정에서 IAM 역할을 가정하여 권한 부여
+
+IAM 역할을 사용하여 Cloud Manager 인스턴스와 다른 AWS 계정을 구축한 소스 AWS 계정과 신뢰 관계를 설정할 수 있습니다. 그런 다음 Cloud Manager에 신뢰할 수 있는 계정의 IAM 역할 ARN을 제공합니다.
+
+.단계
+. Cloud Volumes ONTAP를 배포하려는 대상 계정으로 이동하여 * 다른 AWS 계정 * 을 선택하여 IAM 역할을 생성합니다.
++
+다음을 수행하십시오.
+
++
+** Cloud Manager 인스턴스가 있는 계정의 ID를 입력합니다.
+** 에서 사용할 수 있는 Cloud Manager IAM 정책을 연결합니다 https://mysupport.netapp.com/cloudontap/iampolicies["Cloud Manager 정책 페이지"^].
++
+image:screenshot_iam_create_role.gif["AWS IAM 콘솔에서 역할 생성 페이지를 보여 주는 스크린샷 신뢰할 수 있는 엔터티 유형 선택 에서 다른 AWS 계정이 선택됩니다."]
+
+
+
+. Cloud Manager 인스턴스가 있는 소스 계정으로 이동하여 인스턴스에 연결된 IAM 역할을 선택합니다.
++
+.. 신뢰 관계 > 신뢰 관계 편집 * 을 클릭합니다.
+.. "STS:AssumRole" 작업과 대상 계정에서 생성한 역할의 ARN을 추가합니다.
++
+* 예 *
+
++
+[source, json]
+----
+{
+ "Version": "2012-10-17",
+ "Statement": {
+   "Effect": "Allow",
+   "Action": "sts:AssumeRole",
+   "Resource": "arn:aws:iam::ACCOUNT-B-ID:role/ACCOUNT-B-ROLENAME"
+}
+}
+----
+
+
+
+
+이제 계정에 필요한 권한이 있습니다. <<Adding AWS accounts to Cloud Manager,이제 Cloud Manager에 추가할 수 있습니다>>.
+
+
+
+== Cloud Manager에 AWS 계정 추가
+
+필요한 권한이 있는 AWS 계정을 제공한 후 Cloud Manager에 계정을 추가할 수 있습니다. 그러면 해당 계정에서 Cloud Volumes ONTAP 시스템을 시작할 수 있습니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 상단에서 설정 아이콘을 클릭하고 * 클라우드 공급자 및 지원 계정 * 을 선택합니다.
++
+image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설정 아이콘이 표시된 스크린샷"]
+
+. 새 계정 추가 * 를 클릭하고 * AWS * 를 선택합니다.
+. AWS 키를 제공할지 또는 신뢰할 수 있는 IAM 역할의 ARN을 제공할지 여부를 선택합니다.
+. 정책 요구 사항이 충족되었는지 확인한 다음 * 계정 생성 * 을 클릭합니다.
+
+
+이제 새 작업 환경을 생성할 때 세부 정보 및 자격 증명 페이지에서 다른 계정으로 전환할 수 있습니다.
+
+image:screenshot_accounts_switch_aws.gif["세부 정보 및 amp;Credentials 페이지에서 계정 전환 을 클릭한 후 클라우드 공급자 계정 간 선택을 보여 주는 스크린샷"]

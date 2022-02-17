@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: reference_regions.html 
+keywords: region, regions, mumbai, seoul, singapore, sydney, tokyo, frankfurt, paris, london, ireland, canada, govcloud, us east, us west, sao paulo, australia, japan, korea, southeast asia, east asia, germany, north europe, uk south, uk west, west europe, canada, central us, east us, north central, south central, west us, west central 
+summary: Cloud Manager 및 Cloud Volumes ONTAP는 다양한 AWS 지역 및 Microsoft Azure 지역에서 지원됩니다. 
+---
+= 지원 지역
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 및 Cloud Volumes ONTAP는 다양한 AWS 지역 및 Microsoft Azure 지역에서 지원됩니다.
+
+https://cloud.netapp.com/cloud-volumes-global-regions["지원되는 지역 목록을 보려면 여기를 클릭하십시오"^].

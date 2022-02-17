@@ -1,0 +1,18 @@
+---
+sidebar: sidebar 
+permalink: concept_keep_up.html 
+keywords: shut down, shutdown, stop, stopping, billing, power on, power off 
+summary: Cloud Manager는 항상 실행 상태를 유지해야 합니다. 
+---
+= Cloud Manager의 지속적인 가동 및 실행
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager는 항상 실행 상태를 유지해야 합니다.
+
+Cloud Manager는 Cloud Volumes ONTAP의 상태 및 청구 관련 핵심 구성요소입니다. Cloud Manager의 전원이 꺼져 있는 경우, Cloud Volumes ONTAP 시스템은 Cloud Manager와의 통신을 4일 이상 유지한 후 종료됩니다.

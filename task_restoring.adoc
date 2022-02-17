@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: task_restoring.html 
+keywords: cloud manager, restore, restoring, restore cloud manager, back up, backup, backups, back up cloud manager 
+summary: NetApp Cloud Central 고객은 Cloud Manager 구성을 쉽게 복원할 수 있습니다. 계정은 Cloud Central에서 실행되는 서비스이므로 계정과 연결된 사용자, 작업 영역 및 서비스 커넥터에 항상 액세스할 수 있습니다. Cloud Manager 시스템이 실수로 삭제된 경우에도 마찬가지입니다. 
+---
+= Cloud Manager 복원 중
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+귀사의 link:concept_cloud_central_accounts.html["NetApp Cloud Central 계정"] Cloud Manager 구성을 쉽게 복원할 수 있습니다. 계정은 Cloud Central에서 실행되는 서비스이므로 계정과 연결된 사용자, 작업 영역 및 서비스 커넥터에 항상 액세스할 수 있습니다. Cloud Manager 시스템이 실수로 삭제된 경우에도 마찬가지입니다.
+
+
+NOTE: 3.7.1 릴리즈부터는 Cloud Manager에서 백업을 다운로드하고 사용하여 구성을 복원할 수 없습니다. Cloud Manager를 복원하려면 다음 단계를 따라야 합니다.
+
+.단계
+. 기존 Cloud Central 계정에 새 Cloud Manager 시스템을 배포합니다.
++
+link:reference_deployment_overview.html["구축 옵션"]
+
+. 클라우드 공급자 계정 및 NetApp Support 사이트 계정을 Cloud Manager에 추가합니다.
++
+이 단계를 통해 Cloud Manager를 준비하여 클라우드 공급자에서 추가 Cloud Volumes ONTAP 시스템을 생성할 수 있습니다.
+
++
+AWS 키를 사용하여 새로운 Cloud Manager 시스템에서 검색할 기존 Cloud Volumes ONTAP 시스템을 구축하는 경우 이 단계를 완료하는 것이 중요합니다. Cloud Manager에서 Cloud Volumes ONTAP를 적절하게 검색 및 관리하려면 AWS 키가 필요합니다.
+
++
+** link:task_adding_aws_accounts.html["Cloud Manager에 AWS 계정 추가"]
+** link:task_adding_azure_accounts.html["Cloud Manager에 Azure 계정 추가"]
+** link:task_adding_nss_accounts.html["Cloud Manager에 NetApp Support 사이트 계정 추가"]
+
+
+. Cloud Volumes ONTAP 시스템, 온프레미스 클러스터 및 클라우드용 NetApp 프라이빗 스토리지 구성과 같은 업무 환경을 재발견하십시오.
++
+** link:task_adding_ontap_cloud.html["Cloud Manager에 기존 Cloud Volumes ONTAP 시스템 추가"]
+** link:task_discovering_ontap.html#discovering-ontap-clusters["ONTAP 클러스터 검색"]
+
+
+
+
+이제 Cloud Manager 구성이 계정, 설정 및 작업 환경과 함께 복원됩니다.

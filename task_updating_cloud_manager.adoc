@@ -1,0 +1,78 @@
+---
+sidebar: sidebar 
+permalink: task_updating_cloud_manager.html 
+keywords: updating, upgrading, patch, automatic, updates, upgrade, update 
+summary: Cloud Manager를 최신 버전으로 업데이트하거나 NetApp 직원이 공유하는 패치를 사용할 수 있습니다. 
+---
+= Cloud Manager 업데이트 중
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager를 최신 버전으로 업데이트하거나 NetApp 직원이 공유하는 패치를 사용할 수 있습니다.
+
+
+
+== 자동 업데이트 활성화
+
+새로운 버전이 출시되면 Cloud Manager가 자동으로 업데이트됩니다. 이렇게 하면 최신 버전을 실행할 수 있습니다.
+
+실행 중인 작업이 없는 경우 Cloud Manager는 자정 12시에 자동으로 업데이트됩니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 상단에서 설정 아이콘을 클릭하고 * Cloud Manager 설정 * 을 선택합니다.
+. 자동 Cloud Manager 업데이트 아래의 확인란을 선택한 다음 * 저장 * 을 클릭합니다.
+
+
+
+
+== Cloud Manager를 최신 버전으로 업데이트하는 중입니다
+
+Cloud Manager에 대한 자동 업데이트를 활성화해야 하지만, 웹 콘솔에서 직접 수동 업데이트를 수행할 수는 있습니다. Cloud Manager는 AWS의 NetApp 소유 S3 버킷에서 소프트웨어 업데이트를 가져옵니다.
+
+검토를 마친 상태여야 합니다 link:reference_new_occm.html["릴리스의 새로운 기능"] 새로운 요구 사항 및 지원 변경 사항 파악
+
+소프트웨어 업데이트는 몇 분 정도 걸립니다. 업데이트 중에는 Cloud Manager를 사용할 수 없습니다.
+
+.단계
+. 콘솔의 오른쪽 아래 모서리를 확인하여 새 버전을 사용할 수 있는지 확인합니다.
++
+image:screenshot_new_version.gif["스크린샷: Cloud Manager 웹 콘솔의 오른쪽 아래 모서리에서 사용할 수 있는 새 버전 사용 가능 링크를 표시합니다."]
+
+. 새 버전을 사용할 수 있는 경우 * 시각표 * 를 클릭하여 진행 중인 작업이 있는지 확인합니다.
++
+진행 중인 작업이 있으면 작업이 완료될 때까지 기다린 후 다음 단계를 진행하십시오.
+
+. 콘솔 오른쪽 하단에서 * 새 버전 사용 가능 * 을 클릭합니다.
+. Cloud Manager 소프트웨어 업데이트 페이지에서 원하는 버전 옆에 있는 * 업데이트 * 를 클릭합니다.
+. 확인 대화 상자를 완료한 다음 * 확인 * 을 클릭합니다.
+
+
+Cloud Manager가 업데이트 프로세스를 시작합니다. 몇 분 후에 콘솔에 로그인할 수 있습니다.
+
+
+
+== 패치를 사용하여 Cloud Manager 업데이트
+
+NetApp이 패치를 공유한 경우 Cloud Manager 웹 콘솔에서 직접 제공되는 패치로 Cloud Manager를 업데이트할 수 있습니다.
+
+패치 업데이트는 일반적으로 몇 분 정도 걸립니다. 업데이트 중에는 Cloud Manager를 사용할 수 없습니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 상단에서 설정 아이콘을 클릭하고 * 소프트웨어 업데이트 * 를 선택합니다.
++
+image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설정 아이콘이 표시된 스크린샷"]
+
+. 제공된 패치로 Cloud Manager를 업데이트하려면 링크를 클릭합니다.
++
+image:screenshot_patch.gif["스크린샷: Cloud Manager를 패치로 업데이트하는 링크를 표시합니다."]
+
+. 확인 대화 상자를 완료한 다음 * 확인 * 을 클릭합니다.
+. 제공된 패치를 선택합니다.
+
+
+Cloud Manager가 패치를 적용합니다. 몇 분 후에 콘솔에 로그인할 수 있습니다.

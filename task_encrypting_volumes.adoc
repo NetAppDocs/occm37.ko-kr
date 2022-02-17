@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: task_encrypting_volumes.html 
+keywords: encrypt, encryption, data, volumes, netapp volume encryption, volume encryption, nve, key managers, kmip, key management servers, license, ssl certificates 
+summary: NetApp 볼륨 암호화는 유휴 데이터를 한 번에 한 볼륨씩 암호화하는 소프트웨어 기반 기술입니다. 데이터, 스냅샷 복사본 및 메타데이터가 암호화됩니다. 데이터에 대한 액세스는 볼륨별로 고유한 XTS-AES-256 키를 통해 제공됩니다. 
+---
+= NetApp 볼륨 암호화로 볼륨 암호화
+:toc: macro
+:hardbreaks:
+:toc: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+:toc-position: content
+
+
+[role="lead"]
+NetApp Volume Encryption(NVE)은 유휴 데이터를 한 번에 하나의 볼륨으로 암호화하는 소프트웨어 기반 기술입니다. 데이터, 스냅샷 복사본 및 메타데이터가 암호화됩니다. 데이터에 대한 액세스는 볼륨별로 고유한 XTS-AES-256 키를 통해 제공됩니다.
+
+.이 작업에 대해
+* Cloud Manager 3.7.1부터 NetApp 볼륨 암호화 라이센스가 NetApp 지원에 등록된 각 Cloud Volumes ONTAP 시스템에 자동으로 설치됩니다.
++
+** link:task_adding_nss_accounts.html["Cloud Manager에 NetApp Support 사이트 계정 추가"]
+** link:task_registering.html["선불 종량제 시스템을 등록하는 중입니다"]
++
+
+NOTE: Cloud Manager는 중국 지역에 있는 시스템에 NVE 라이센스를 설치하지 않습니다.
+
+
+
+* 현재 Cloud Volumes ONTAP는 외부 키 관리 서버로 NetApp 볼륨 암호화를 지원합니다. Onboard Key Manager는 지원되지 않습니다.
+* ONTAP CLI에서 NetApp 볼륨 암호화를 설정해야 합니다.
++
+그런 다음 CLI 또는 System Manager를 사용하여 특정 볼륨에서 암호화를 활성화할 수 있습니다. Cloud Manager는 사용자 인터페이스 및 API에서 NetApp Volume Encryption을 지원하지 않습니다.
+
+
+
+link:concept_security.html["지원되는 암호화 기술에 대해 자세히 알아보십시오"].
+
+.단계
+. 에서 지원되는 주요 관리자 목록을 검토합니다 http://mysupport.netapp.com/matrix["NetApp 상호 운용성 매트릭스 툴"^].
++
+
+TIP: Key Managers * 솔루션을 검색합니다.
+
+. link:task_connecting_to_otc.html["Cloud Volumes ONTAP CLI에 연결합니다"^].
+. SSL 인증서를 설치하고 외부 키 관리 서버에 연결합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-DD718B42-038D-4009-84FF-20BBD6530BC2.html["ONTAP 9 NetApp 암호화 전원 가이드: 외부 키 관리 구성"^]
+
+. 암호화된 새 볼륨을 생성하거나 CLI 또는 System Manager를 사용하여 암호화되지 않은 기존 볼륨을 변환합니다.
++
+** CLI:
++
+*** 새 볼륨의 경우 -encrypt 매개 변수와 함께 * volume create * 명령을 사용합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-A5D3FDEF-CA10-4A54-9E17-DB9E9954082E.html["ONTAP 9 NetApp 암호화 기능 가이드: 새 볼륨에서 암호화 활성화"^]
+
+*** 기존 볼륨의 경우 * volume encryption conversion start * 명령을 사용합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.pow-nve/GUID-1468CE48-A0D9-4D45-BF78-A11C26724051.html["ONTAP 9 NetApp 암호화 전원 가이드: 볼륨 암호화 변환 시작 명령을 사용하여 기존 볼륨에서 암호화 사용"^]
+
+
+
+** 시스템 관리자:
++
+*** 새 볼륨의 경우 * 스토리지 > 볼륨 > 생성 > FlexVol 생성 * 을 클릭한 다음 * 암호화 * 를 선택합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-3FA865E2-AE14-40A9-BF76-A2D7EB44D387.html["시스템 관리자를 사용한 ONTAP 9 클러스터 관리: FlexVol 볼륨 생성"^]
+
+*** 기존 볼륨의 경우 볼륨을 선택하고 * Edit * 를 클릭한 다음 * Encrypted * 를 선택합니다.
++
+http://docs.netapp.com/ontap-9/topic/com.netapp.doc.onc-sm-help-950/GUID-906E88E4-8CE9-465F-8AC7-0C089080B2C5.html["ONTAP 9 시스템 관리자를 사용한 클러스터 관리: 볼륨 속성 편집"^]
+
+
+
+
+
+

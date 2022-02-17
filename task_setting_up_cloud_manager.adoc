@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task_setting_up_cloud_manager.html 
+keywords:  
+summary: Cloud Manager를 구축한 직후에 Cloud Volumes ONTAP 시스템 생성을 시작할 수 있습니다. 그러나 Cloud Central 계정 설정, 클라우드 공급자 계정 추가, HTTPS 인증서 설치 등을 통해 추가 설정을 먼저 수행할 수 있습니다. 
+---
+= Cloud Manager 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager를 구축한 직후에 Cloud Volumes ONTAP 시스템 생성을 시작할 수 있습니다. 그러나 Cloud Central 계정 설정, 클라우드 공급자 계정 추가, HTTPS 인증서 설치 등을 통해 추가 설정을 먼저 수행할 수 있습니다.
+
+* link:task_setting_up_cloud_central_accounts.html["Cloud Central 계정 설정"]
+* link:task_adding_aws_accounts.html["Cloud Manager에 AWS 계정 추가"]
+* link:task_adding_azure_accounts.html["Cloud Manager에 Azure 계정 추가"]
+* link:task_adding_gcp_accounts.html["Cloud Manager에 GCP 계정 추가"]
+* link:task_adding_nss_accounts.html["Cloud Manager에 NetApp Support 사이트 계정 추가"]
+* link:task_installing_https_cert.html["HTTPS 인증서 설치"]
+* link:task_setting_up_kms.html["AWS KMS 설정"]
+

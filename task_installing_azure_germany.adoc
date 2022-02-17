@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: task_installing_azure_germany.html 
+keywords: install, installation, installing, linux, installer, software, germany, azure, region 
+summary: Azure Marketplace는 Azure Germany 지역에서는 제공되지 않으므로 Cloud Manager 설치 프로그램을 NetApp Support 사이트에서 다운로드하여 해당 지역의 기존 Linux 호스트에 설치해야 합니다. 
+---
+= Azure 독일 지역에 Cloud Manager 설치
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Azure 마켓플레이스는 Azure 독일 지역에서 사용할 수 없으므로 NetApp Support 사이트에서 Cloud Manager 설치 프로그램을 다운로드하고 이 지역의 기존 Linux 호스트에 설치해야 합니다.
+
+.단계
+. link:reference_networking_azure.html["Azure의 네트워킹 요구 사항을 검토합니다"].
+. link:reference_cloud_mgr_reqs.html["Cloud Manager 호스트 요구사항을 검토합니다"].
+. link:task_installing_linux.html["Cloud Manager를 다운로드하고 설치합니다"].
+. link:task_adding_azure_accounts.html["서비스 보안 주체를 사용하여 Cloud Manager에 Azure 권한을 부여합니다"].
+
+
+Cloud Manager는 이제 다른 지역과 마찬가지로 Azure 독일 지역에 Cloud Volumes ONTAP를 구축할 준비가 되었습니다. 그러나 먼저 추가 설정을 수행할 수 있습니다.

@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task_renewing_cert.html 
+keywords: https certificate, certificate, renewing 
+summary: Cloud Manager 웹 콘솔에 안전하게 액세스하려면 만료되기 전에 Cloud Manager HTTPS 인증서를 갱신해야 합니다. 만료되기 전에 인증서를 갱신하지 않으면 사용자가 HTTPS를 사용하여 웹 콘솔에 액세스할 때 경고가 나타납니다. 
+---
+= Cloud Manager HTTPS 인증서를 갱신하는 중입니다
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager 웹 콘솔에 안전하게 액세스하려면 만료되기 전에 Cloud Manager HTTPS 인증서를 갱신해야 합니다. 만료되기 전에 인증서를 갱신하지 않으면 사용자가 HTTPS를 사용하여 웹 콘솔에 액세스할 때 경고가 나타납니다.
+
+.단계
+. Cloud Manager 콘솔의 오른쪽 상단에서 설정 아이콘을 클릭하고 * HTTPS 설정 * 을 선택합니다.
++
+만료 날짜를 포함하여 Cloud Manager 인증서에 대한 세부 정보가 표시됩니다.
+
+. HTTPS 인증서 갱신 * 을 클릭하고 단계에 따라 CSR을 생성하거나 고유한 CA 서명 인증서를 설치합니다.
+
+
+Cloud Manager는 새로운 CA 서명 인증서를 사용하여 안전한 HTTPS 액세스를 제공합니다.

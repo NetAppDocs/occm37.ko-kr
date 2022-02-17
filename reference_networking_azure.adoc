@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: reference_networking_azure.html 
+keywords: networking, network, requirements, connection, connections, vnet, security group, security groups, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, blob, service endpoint 
+summary: Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 Azure 네트워킹을 설정합니다. 
+---
+= Azure의 Cloud Volumes ONTAP에 대한 네트워킹 요구사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 Azure 네트워킹을 설정합니다.
+
+Cloud Volumes ONTAP에 대한 아웃바운드 인터넷 액세스::
++
+--
+라우팅 및 방화벽 정책은 Cloud Volumes ONTAP가 AutoSupport 메시지를 보낼 수 있도록 다음 엔드포인트에 대한 HTTP/HTTPS 트래픽을 허용해야 합니다.
+
+* https://support.netapp.com/aods/asupmessage 으로 문의하십시오
+* https://support.netapp.com/asupprod/post/1.0/postAsup 으로 문의하십시오
+
+
+--
+보안 그룹:: Cloud Manager에서 보안 그룹을 생성할 수 있으므로 보안 그룹을 생성할 필요가 없습니다. 직접 사용해야 하는 경우 을 참조하십시오 link:reference_security_groups_azure.html["보안 그룹 규칙"].
+IP 주소 수입니다::
++
+--
+* 단일 노드: 5개의 IP 주소
+* HA 쌍: 16개의 IP 주소
++
+Cloud Manager는 HA 쌍에서 SVM 관리 LIF를 생성하지만 Azure의 단일 노드 시스템에는 없습니다.
+
++
+
+TIP: LIF는 물리적 포트와 연결된 IP 주소입니다. SnapCenter와 같은 관리 툴을 사용하려면 SVM 관리 LIF가 필요합니다.
+
+
+
+--
+데이터 계층화를 위해 Cloud Volumes ONTAP에서 Azure Blob 저장소로 연결::
++
+--
+[source, json]
+----
+"Microsoft.Network/virtualNetworks/subnets/write",
+"Microsoft.Network/routeTables/join/action",
+----
+이러한 권한은 최신 에 포함되어 있습니다 https://mysupport.netapp.com/cloudontap/iampolicies["Cloud Manager 정책"].
+
+데이터 계층화 설정에 대한 자세한 내용은 을 참조하십시오 link:task_tiering.html["콜드 데이터를 저비용 오브젝트 스토리지로 계층화"].
+
+--
+다른 네트워크의 ONTAP 시스템에 대한 연결::
++
+--
+자세한 지침은 을 참조하십시오 https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal["Microsoft Azure 문서: Azure 포털에서 사이트 간 연결을 만듭니다"^].
+
+--
+

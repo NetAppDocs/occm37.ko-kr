@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: concept_cloud_central.html 
+keywords: netapp cloud central, cloud central, cloud data services, data services, user authentication, authentication, video 
+summary: NetApp Cloud Central은 NetApp 클라우드 데이터 서비스에 액세스하고 이를 관리할 수 있는 중앙의 위치입니다. 
+---
+= NetApp Cloud Central에서
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+https://cloud.netapp.com["NetApp Cloud Central에서"^] NetApp 클라우드 데이터 서비스에 액세스하고 관리할 수 있는 중앙 위치 제공 이러한 서비스를 사용하여 클라우드에서 중요한 애플리케이션을 실행하고, 자동화된 DR 사이트를 생성하고, SaaS 데이터를 백업하고, 여러 클라우드 간에 데이터를 효과적으로 마이그레이션 및 제어할 수 있습니다.
+
+Cloud Manager와 NetApp Cloud Central의 통합은 간소화된 배포 경험, 여러 Cloud Manager 시스템을 보고 관리할 수 있는 단일 위치, 중앙 집중식 사용자 인증 등 여러 가지 이점을 제공합니다.
+
+중앙 집중식 사용자 인증을 통해 Cloud Manager 시스템과 Cloud Manager와 Cloud Sync 같은 다른 데이터 서비스 간에 동일한 자격 증명 세트를 사용할 수 있습니다. 또한 암호를 잊은 경우에도 암호를 쉽게 재설정할 수 있습니다.
+
+image:screenshot_cloud_central.gif["Cloud Central에서 패브릭 보기를 보여 주는 스크린샷"]

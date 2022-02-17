@@ -1,0 +1,144 @@
+---
+sidebar: sidebar 
+permalink: concept_cloud_central_accounts.html 
+keywords: accounts, workspaces, service connector, users, cloud central, admin, Account Admin, Workspace Admin 
+summary: 각 Cloud Manager 시스템은 NetApp Cloud Central 계정에 연결됩니다. Cloud Central 계정은 Cloud Manager 시스템과 사용자가 Cloud Volumes ONTAP를 배포하는 작업 공간의 컨테이너입니다. 
+---
+= Cloud Central 계정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+각 Cloud Manager 시스템은 _ NetApp Cloud Central 계정 _ 과(와) 연결됩니다. Cloud Central 계정은 멀티 테넌시를 제공하고 격리된 작업 영역에서 사용자와 리소스를 구성할 수 있도록 합니다.
+
+Cloud Central 계정은 멀티 테넌시를 지원합니다.
+
+* 단일 Cloud Central 계정에는 다양한 비즈니스 요구사항을 지원하는 여러 Cloud Manager 시스템이 포함될 수 있습니다.
++
+사용자는 Cloud Central 계정과 연결되어 있으므로 개별 Cloud Manager 시스템에 대해 사용자를 구성할 필요가 없습니다.
+
+* 각 Cloud Manager 시스템 내에서 여러 사용자가 작업 공간이라는 격리된 환경에서 Cloud Volumes ONTAP 시스템을 배포하고 관리할 수 있습니다.
++
+이러한 작업 영역은 다른 사용자가 공유하지 않는 한 표시되지 않습니다.
+
+
+
+Cloud Manager를 구축할 때 시스템에 연결할 Cloud Central 계정을 선택합니다.
+
+image:screenshot_account_selection.gif["Cloud Manager를 생성하려는 Cloud Central 계정을 묻는 Cloud Manager 설정 마법사 스크린샷"]
+
+그런 다음 계정 관리자는 사용자, 작업 공간 및 서비스 커넥터를 관리하여 이 계정의 설정을 수정할 수 있습니다.
+
+image:screenshot_account_settings.gif["사용자, 작업 영역 및 서비스 커넥터를 관리할 수 있는 계정 설정 위젯을 보여 주는 스크린샷"]
+
+단계별 지침은 을 참조하십시오 link:task_setting_up_cloud_central_accounts.html["Cloud Central 계정 설정"].
+
+
+NOTE: Cloud Central 계정 서비스에 연결하려면 Cloud Manager에서 _\https://cloudmanager.cloud.netapp.com_ 액세스해야 합니다. 방화벽에서 이 URL을 열어 Cloud Manager가 서비스에 연결할 수 있는지 확인합니다.
+
+
+
+== 사용자, 작업 공간 및 서비스 커넥터
+
+Cloud Manager의 계정 설정 위젯을 사용하면 계정 관리자가 Cloud Central 계정을 관리할 수 있습니다. 방금 계정을 만든 경우 처음부터 다시 시작할 수 있습니다. 그러나 이미 계정을 설정한 경우에는 계정과 연결된 사용자, 작업 영역 및 서비스 커넥터가 _ALL_으로 표시됩니다.
+
+사용자::
++
+--
+사용자를 연결할 때 역할을 할당합니다.
+
+* _계정 관리자_: Cloud Manager에서 모든 작업을 수행할 수 있습니다.
+* _Workspace 관리자_: 할당된 작업 영역에서 자원을 작성하고 관리할 수 있습니다.
+
+
+--
+작업 공간::
++
+--
+작업 환경은 스토리지 시스템을 나타냅니다.
+
+* 단일 노드 Cloud Volumes ONTAP 시스템 또는 HA 쌍
+* 네트워크의 온-프레미스 ONTAP 클러스터
+* NetApp 프라이빗 스토리지 구성의 ONTAP 클러스터
+
+
+--
+서비스 커넥터::
++
+--
+둘 이상의 NetApp 클라우드 데이터 서비스에 서비스 커넥터를 사용할 수 있습니다. 예를 들어, Cloud Manager용 서비스 커넥터가 이미 있는 경우 Cloud Tiering 서비스를 설정할 때 해당 커넥터를 선택할 수 있습니다.
+
+--
+
+
+
+
+== 예
+
+다음 예제에서는 두 개의 작업 영역을 사용하여 Cloud Volumes ONTAP 시스템에 대해 격리된 환경을 만드는 계정을 보여 줍니다. 예를 들어 한 작업 영역은 스테이징 환경이고 다른 작업 영역은 운영 환경일 수 있습니다.
+
+
+NOTE: Cloud Manager와 Cloud Volumes ONTAP 시스템은 실제로 클라우드 공급자 내에서 실행 중인 NetApp Cloud Central 계정 _ 에 상주하지 않습니다. 각 구성 요소 간의 관계를 개념적으로 나타낸 것입니다.
+
+image:diagram_cloud_central_accounts_one.png["두 개의 작업 영역이 포함된 단일 Cloud Central 계정을 보여 주는 다이어그램 각 작업 영역은 동일한 서비스 커넥터와 연결되며 각 작업 영역 관리자는 고유한 작업 영역 관리자를 가집니다"]
+
+다음은 두 개의 개별 Cloud Central 계정을 사용하여 가장 높은 수준의 멀티 테넌시를 보여 주는 또 다른 예입니다. 예를 들어, 서비스 공급자는 Cloud Central 계정 하나에 Cloud Manager를 사용하여 고객에게 서비스를 제공하는 동시에 다른 계정을 사용하여 부서 중 하나에 대한 재해 복구를 제공할 수 있습니다.
+
+계정 2에는 별도의 서비스 커넥터가 2개 포함되어 있습니다. 시스템이 다른 지역이나 별도의 클라우드 공급자에 있는 경우 이러한 문제가 발생할 수 있습니다.
+
+
+NOTE: 다시 말씀드리지만, Cloud Manager와 Cloud Volumes ONTAP 시스템은 실제로 클라우드 센트럴 계정에는 _ 이(가) 없습니다. _ 이(가) 클라우드 공급자에서 실행되고 있습니다. 각 구성 요소 간의 관계를 개념적으로 나타낸 것입니다.
+
+image:diagram_cloud_central_accounts_two.png["두 개의 Cloud Central 계정을 보여 주는 다이어그램으로, 각 계정에는 여러 개의 작업 공간과 연결된 Workspace 관리자가 있습니다."]
+
+
+
+== Cloud Central 계정 통합에 대한 FAQ
+
+Cloud Manager 3.7로 업그레이드한 후 잠시 후 NetApp에서 Cloud Central 계정에 통합할 특정 Cloud Manager 시스템을 선택합니다. 이 FAQ는 프로세스에 관한 질문에 답할 수 있습니다.
+
+
+
+=== 이 프로세스에는 시간이 얼마나 걸립니까?
+
+몇 분 내로 가능합니다.
+
+
+
+=== Cloud Manager를 사용할 수 없습니까?
+
+아니요, Cloud Manager 시스템에 계속 액세스할 수 있습니다.
+
+
+
+=== Cloud Volumes ONTAP는 어떻습니까?
+
+Cloud Volumes ONTAP 시스템은 중단 없이 사용할 수 있습니다.
+
+
+
+=== 이 프로세스 중에 어떤 일이 발생합니까?
+
+NetApp은 통합 프로세스 중에 다음을 수행합니다.
+
+. 새 Cloud Central 계정을 생성하여 Cloud Manager 시스템과 연계합니다.
+. 각 기존 사용자에게 새 역할을 할당합니다.
++
+** Cloud Manager 관리자는 Account Admins가 됩니다
+** 테넌트 관리자 및 작업 환경 관리자는 Workspace 관리자가 됩니다
+
+
+. 기존 테넌트를 대체하는 작업 영역을 생성합니다.
+. 작업 환경을 해당 작업 영역에 배치합니다.
+. 서비스 커넥터를 모든 작업 영역에 연결합니다.
+
+
+
+
+=== Cloud Manager 시스템을 어디에 설치해도 됩니까?
+
+아니요 NetApp은 AWS, Azure 또는 사내 등 위치에 상관없이 Cloud Central 고객과 시스템을 통합합니다.

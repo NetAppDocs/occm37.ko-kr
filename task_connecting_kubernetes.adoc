@@ -1,0 +1,100 @@
+---
+pagenav: false 
+sidebar: sidebar 
+permalink: task_connecting_kubernetes.html 
+keywords: kubernetes, persistent volumes, containers, persistent storage, kubeconfig, trident, kubernetes cluster, storage classes, classes, cvo-single, cvo-ha, thick provisioning, trident_trident, connect, disconnect, provision 
+summary: Cloud Manager를 사용하면 Kubernetes 클러스터에 NetApp Trident 구축을 자동화하여 컨테이너용 영구 스토리지로 ONTAP를 사용할 수 있습니다. 이 기능은 Cloud Volumes ONTAP 및 온프레미스 ONTAP 클러스터에서 작동합니다. 시작에 몇 가지 단계가 있습니다. 
+---
+= Kubernetes용 영구 스토리지로 ONTAP 사용
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager는 의 구축을 자동화할 수 있습니다 https://netapp-trident.readthedocs.io/en/stable-v18.10/introduction.html["NetApp 트라이던트"^] Kubernetes 클러스터에서 컨테이너용 영구 스토리지로 ONTAP를 사용할 수 있습니다. 이 기능은 Cloud Volumes ONTAP 및 온프레미스 ONTAP 클러스터에서 작동합니다.
+
+이 단계를 완료하기 전에 해야 합니다 link:reference_before.html["Cloud Volumes ONTAP 시스템을 생성합니다"] 또는  수 있습니다.
+
+를 사용하여 Kubernetes 클러스터를 구축하는 경우 https://cloud.netapp.com/kubernetes-service["NetApp Kubernetes 서비스"^]Cloud Manager를 사용하면 NetApp Cloud Central 계정에서 클러스터를 자동으로 검색할 수 있습니다. 이 경우 처음 두 단계를 건너뛰고 3단계부터 시작합니다.
+
+
+
+=== 네트워크 연결을 확인합니다
+
+. Cloud Manager와 Kubernetes 클러스터 간, Kubernetes 클러스터에서 ONTAP 시스템까지 네트워크 연결을 사용할 수 있어야 합니다.
+. Trident를 설치할 때 Cloud Manager에서 다음 끝점에 액세스하려면 아웃바운드 인터넷 연결이 필요합니다.
++
+https://packages.cloud.google.com/yum \https://github.com/NetApp/trident/releases/download/ 으로 문의하십시오
+
++
+Cloud Manager는 작업 환경을 클러스터에 연결할 때 Kubernetes 클러스터에 Trident를 설치합니다.
+
+
+
+
+
+=== Kubernetes 구성 파일을 Cloud Manager에 업로드합니다
+
+[role="quick-margin-para"]
+각 Kubernetes 클러스터의 계정 관리자는 YAML 형식의 구성 파일(kubecononfig)을 업로드해야 합니다. 파일을 업로드하면 Cloud Manager가 클러스터에 대한 연결을 확인하고 kubecon무화파일의 암호화된 복사본을 저장합니다.
+
+[role="quick-margin-para"]
+Kubernetes 클러스터 > 검색 > 파일 업로드 * 를 클릭하고 kubecononfig 파일을 선택합니다.
+
+[role="quick-margin-para"]
+image:screenshot_kubernetes_setup.gif["검색 단추가 있는 Kubernetes 클러스터 탭을 표시한 다음 파일 업로드 를 클릭하여 kubecon무그림 파일을 업로드하는 화면을 보여 주는 스크린샷"]
+
+
+
+=== 작업 환경을 Kubernetes 클러스터에 연결합니다
+
+[role="quick-margin-para"]
+작업 환경에서 Kubernetes 아이콘을 클릭하고 화면의 지시를 따릅니다. 여러 클러스터를 서로 다른 ONTAP 시스템에 연결하고 여러 클러스터를 동일한 ONTAP 시스템에 연결할 수 있습니다.
+
+[role="quick-margin-para"]
+NetApp 스토리지 클래스를 Kubernetes 클러스터의 기본 스토리지 클래스로 설정할 수 있습니다. 사용자가 영구 볼륨을 생성할 때 Kubernetes 클러스터는 연결된 ONTAP 시스템을 기본적으로 백엔드 스토리지로 사용할 수 있습니다.
+
+[role="quick-margin-para"]
+image:screenshot_kubernetes_connect.gif["및 Cloud Volumes ONTAP 작업 환경 내의 Kubernetes 아이콘을 보여주는 스크린샷과 Kubernetes 클러스터를 선택한 다음 연결을 클릭할 수 있는 후속 페이지입니다."]
+
+
+
+=== 영구 볼륨 프로비저닝을 시작합니다
+
+[role="quick-margin-para"]
+네이티브 Kubernetes 인터페이스 및 구조를 사용하여 영구 볼륨을 요청 및 관리합니다. Cloud Manager에서는 영구 볼륨을 프로비저닝할 때 사용할 수 있는 4가지 Kubernetes 스토리지 클래스를 생성합니다.
+
+* * NetApp-파일 *: 영구 볼륨을 단일 노드 ONTAP 시스템에 바인딩하는 데 사용됩니다
+* * NetApp-file-san *: iSCSI 영구 볼륨을 단일 노드 ONTAP 시스템에 바인딩하는 데 사용됩니다
+* * NetApp-파일-중복 *: 영구 볼륨을 ONTAP HA 쌍에 바인딩하는 데 사용됩니다
+* * NetApp-file-redundant-san *: iSCSI 영구 볼륨을 ONTAP HA 쌍에 바인딩하는 데 사용됩니다
+
+
+[role="quick-margin-para"]
+Cloud Manager는 기본적으로 다음 프로비저닝 옵션을 사용하도록 Trident를 구성합니다.
+
+* 씬 볼륨
+* 기본 스냅샷 정책입니다
+* 액세스 가능한 스냅샷 디렉토리입니다
+
+
+[role="quick-margin-para"]
+https://netapp-trident.readthedocs.io/["Kubernetes용 Trident를 사용하여 첫 번째 볼륨을 프로비저닝하는 방법에 대해 자세히 알아보십시오"^]
+
+.Triment_triment 볼륨은 얼마입니까?
+****
+Cloud Manager는 Kubernetes 클러스터에 연결하는 첫 번째 ONTAP 시스템에 볼륨을 생성합니다. 볼륨의 이름은 "_triment_trifent"로 추가됩니다. ONTAP는 이 볼륨을 사용하여 Kubernetes 클러스터에 연결합니다. 이러한 볼륨을 삭제해서는 안 됩니다.
+
+****
+.Kubernetes 클러스터를 분리하거나 제거하면 어떻게 됩니까?
+****
+Cloud Manager를 사용하면 Kubernetes 클러스터에서 개별 ONTAP 시스템의 연결을 끊을 수 있습니다. 시스템의 연결을 끊으면 해당 ONTAP 시스템을 더 이상 컨테이너용 영구 스토리지로 사용할 수 없습니다. 기존 영구 볼륨은 삭제되지 않습니다.
+
+Kubernetes 클러스터에서 모든 시스템의 연결을 끊은 후 Cloud Manager에서 전체 Kubernetes 구성을 제거할 수도 있습니다. Cloud Manager는 클러스터를 제거할 때 Trident를 제거하지 않으며 영구 볼륨은 삭제하지 않습니다.
+
+이러한 작업은 모두 API를 통해서만 사용할 수 있습니다. 향후 릴리즈에서 인터페이스에 작업을 추가할 계획입니다.link:api.html#_kubernetes["API에 대한 자세한 내용을 보려면 여기를 클릭하십시오"].
+
+****

@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: concept_overview.html 
+keywords: overview, concepts, features, use case 
+summary: Cloud Manager를 사용하면 Cloud Volumes ONTAP를 구축하여 클라우드 스토리지에 엔터프라이즈급 기능을 제공하고 NetApp 기반 하이브리드 클라우드 전반에서 데이터를 쉽게 복제할 수 있습니다. 
+---
+= Cloud Manager 및 Cloud Volumes ONTAP 개요
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+Cloud Manager를 사용하면 Cloud Volumes ONTAP를 구축하여 클라우드 스토리지에 엔터프라이즈급 기능을 제공하고 NetApp 기반 하이브리드 클라우드 전반에서 데이터를 쉽게 복제할 수 있습니다.
+
+
+
+== 클라우드 관리자
+
+Cloud Manager는 단순성을 염두에 두고 설계되었습니다. 이 가이드는 몇 단계로 Cloud Volumes ONTAP 설정을 안내하며, 스토리지 프로비저닝을 단순화하고 용량 관리를 자동화하여 데이터 관리를 용이하게 하며, 하이브리드 클라우드 전반에서 끌어서 놓기 데이터 복제를 지원합니다.
+
+Cloud Volumes ONTAP를 구축 및 관리하려면 Cloud Manager가 필요하지만, 사내 ONTAP 클러스터를 위한 스토리지를 검색하고 프로비저닝할 수도 있습니다. 클라우드 및 사내 스토리지 인프라를 중앙에서 제어할 수 있습니다.
+
+클라우드 또는 네트워크에서 Cloud Manager를 실행할 수 있으며, Cloud Volumes ONTAP를 구축하려는 네트워크에 연결만 있으면 됩니다. 다음 이미지는 클라우드 공급자에서 실행되는 Cloud Manager 및 Cloud Volumes ONTAP를 보여 줍니다. 또한 하이브리드 클라우드 전반의 데이터 복제도 보여 줍니다.
+
+image:diagram_cloud_manager_overview.png["Cloud Manager를 통해 하이브리드 클라우드 및 멀티 클라우드 환경에서 Cloud Volumes ONTAP 시스템과 데이터 복제를 관리할 수 있음을 보여 줍니다."]
+
+https://www.netapp.com/us/products/data-infrastructure-management/cloud-manager.aspx["Cloud Manager에 대해 자세히 알아보십시오"^]
+
+
+
+== Cloud Volumes ONTAP
+
+Cloud Volumes ONTAP은 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다. Cloud Volumes ONTAP를 운영 워크로드, 재해 복구, DevOps, 파일 공유 및 데이터베이스 관리에 사용할 수 있습니다.
+
+Cloud Volumes ONTAP은 다음과 같은 주요 기능을 통해 엔터프라이즈 스토리지를 클라우드로 확장합니다.
+
+* 스토리지 효율성 기능은 내장된 데이터 중복제거, 데이터 압축, 씬 프로비저닝 및 복제를 활용하여 스토리지 비용을 최소화합니다.
+* 고가용성은 클라우드 환경에서 장애가 발생할 경우 엔터프라이즈급 안정성과 지속적인 운영을 보장합니다.
+* 데이터 복제 Cloud Volumes ONTAP는 NetApp의 업계 최고 복제 기술인 SnapMirror를 활용하여 사내 데이터를 클라우드로 복제하므로 여러 사용 사례에서 보조 복사본을 쉽게 사용할 수 있습니다.
+* 데이터 계층화 애플리케이션을 오프라인으로 전환하지 않고도 필요에 따라 고성능 스토리지 풀과 고성능 스토리지 풀 간에 전환할 수 있습니다.
+* 애플리케이션 정합성을 보장하는 NetApp SnapCenter은 NetApp Snapshot 복사본의 일관성을 보장합니다.
+
+
+
+NOTE: ONTAP 기능에 대한 라이센스는 Cloud Volumes ONTAP에 포함되어 있습니다.
+
+https://docs.netapp.com/us-en/cloud-volumes-ontap/index.html["지원되는 Cloud Volumes ONTAP 구성을 봅니다"^]
+
+https://cloud.netapp.com/ontap-cloud["Cloud Volumes ONTAP에 대해 자세히 알아보십시오"^]

@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: task_uninstalling.html 
+keywords: uninstalling, uninstall, reinstall 
+summary: Cloud Manager에는 소프트웨어를 제거하여 문제를 해결하거나 소프트웨어를 호스트에서 영구적으로 제거하는 데 사용할 수 있는 제거 스크립트가 포함되어 있습니다. 
+---
+= Cloud Manager 제거 중
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager에는 소프트웨어를 제거하여 문제를 해결하거나 소프트웨어를 호스트에서 영구적으로 제거하는 데 사용할 수 있는 제거 스크립트가 포함되어 있습니다.
+
+.단계
+. Linux 호스트에서 제거 스크립트를 실행합니다.
++
+* /opt/application/netapp/cloudmanager/bin/uninstall.sh [silent] *
+
++
+_silent_는 확인 메시지를 표시하지 않고 스크립트를 실행합니다.
+
+

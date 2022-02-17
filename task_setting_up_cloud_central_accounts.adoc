@@ -1,0 +1,98 @@
+---
+sidebar: sidebar 
+permalink: task_setting_up_cloud_central_accounts.html 
+keywords: account settings, workspaces, service connector, account admin, workspace admin, users, associate, disassociate, add user, add users, user management, administer, user, management, account, user account, user accounts, create workspace, add workspace, setup workspace, workspace, service connector, manage service connector, manage workspace, associate service connector 
+summary: 각 Cloud Manager 시스템은 NetApp Cloud Central 계정에 연결됩니다. 사용자가 Cloud Manager에 액세스하고 작업 공간에 Cloud Volumes ONTAP 시스템을 배포할 수 있도록 Cloud Manager 시스템과 관련된 Cloud Central 계정을 설정합니다. 간단히 사용자를 추가하거나 여러 사용자 및 작업 영역을 추가할 수 있습니다. 
+---
+= Cloud Central 계정에서 작업 영역 및 사용자 설정
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+각 Cloud Manager 시스템은 _ NetApp Cloud Central 계정 _ 과(와) 연결됩니다. 사용자가 Cloud Manager에 액세스하고 작업 공간에 Cloud Volumes ONTAP 시스템을 배포할 수 있도록 Cloud Manager 시스템과 관련된 Cloud Central 계정을 설정합니다. 사용자를 추가하거나 여러 사용자 및 작업 영역을 추가하기만 하면 됩니다.
+
+이 계정은 Cloud Central에서 유지되므로 변경한 내용은 다른 Cloud Manager 시스템 및 다른 NetApp 클라우드 데이터 서비스에 적용됩니다. link:concept_cloud_central_accounts.html["Cloud Central 계정의 작동 방식에 대해 자세히 알아보십시오"].
+
+
+
+== 작업 공간 추가
+
+Cloud Manager의 작업 영역을 사용하면 작업 환경 집합을 다른 작업 환경 및 다른 사용자와 격리할 수 있습니다. 예를 들어 두 개의 작업 영역을 만들고 별도의 사용자를 작업 영역에 연결할 수 있습니다.
+
+.단계
+. 계정 설정 * 을 클릭합니다.
++
+image:screenshot_account_settings_menu.gif["Cloud Manager의 상단 배너에 계정 설정 옵션이 표시된 스크린샷"]
+
+. 작업 공간 * 을 클릭합니다.
+. 새 작업 공간 추가 * 를 클릭합니다.
+. 작업 영역의 이름을 입력하고 * 추가 * 를 클릭합니다.
+
+
+이제 사용자 및 서비스 커넥터를 작업 영역에 연결할 수 있습니다.
+
+
+
+== 사용자 추가
+
+Cloud Central 사용자와 Cloud Central 계정을 연결하여 Cloud Manager에서 작업 환경을 생성하고 관리할 수 있습니다.
+
+.단계
+. 사용자가 아직 하지 않은 경우 사용자에게 로 이동하라고 요청합니다 https://cloud.netapp.com["NetApp Cloud Central에서"^] 계정을 만듭니다.
+. Cloud Manager에서 * 계정 설정 * 을 클릭합니다.
+. 사용자 탭에서 * 사용자 연결 * 을 클릭합니다.
+. 사용자의 이메일 주소를 입력하고 사용자의 역할을 선택합니다.
++
+** * 계정 관리자 *: Cloud Manager에서 모든 작업을 수행할 수 있습니다.
+** * Workspace Admin *: 할당된 작업 영역에서 리소스를 만들고 관리할 수 있습니다.
+
+
+. 작업 영역 관리를 선택한 경우 해당 사용자와 연결할 작업 영역을 하나 이상 선택합니다.
++
+image:screenshot_associate_user.gif["역할과 관련 작업 영역을 선택하여 사용자를 연결하는 방법을 보여 주는 스크린샷"]
+
+. Associate User * 를 클릭합니다.
+
+
+사용자는 NetApp Cloud Central에서 "Account Association"이라는 제목의 이메일을 받아야 합니다. 이 이메일에는 Cloud Manager에 액세스하는 데 필요한 정보가 포함되어 있습니다.
+
+
+
+== 작업 영역 관리자와 작업 영역 연결
+
+언제든지 Workspace Admins를 추가 작업 영역에 연결할 수 있습니다. 사용자를 연결하면 해당 작업 영역에서 작업 환경을 만들고 볼 수 있습니다.
+
+.단계
+. 계정 설정 * 을 클릭합니다.
+. 사용자에 해당하는 행의 작업 메뉴를 클릭합니다.
++
+image:screenshot_associate_user_workspace.gif["사용자 테이블에서 사용자 이름 위로 마우스를 가져가면 사용할 수 있는 작업 메뉴가 표시된 스크린샷"]
+
+. 작업 영역 관리 * 를 클릭합니다.
+. 하나 이상의 작업 공간을 선택하고 * 적용 * 을 클릭합니다.
+
+
+이제 서비스 커넥터도 작업 영역에 연결되어 있는 한 사용자는 Cloud Manager에서 해당 작업 영역에 액세스할 수 있습니다.
+
+
+
+== 서비스 커넥터를 작업 공간과 연결합니다
+
+서비스 커넥터는 Cloud Manager 시스템의 일부입니다. 클라우드 공급업체에 구축된 가상 머신 인스턴스 또는 구성한 온프레미스 호스트에서 실행됩니다. Workspace 관리자가 Cloud Manager에서 해당 작업 영역에 액세스할 수 있도록 이 서비스 커넥터를 작업 공간과 연결해야 합니다.
+
+Account Admins만 있는 경우 서비스 커넥터를 작업 영역과 연결할 필요가 없습니다. 계정 관리자는 기본적으로 Cloud Manager의 모든 작업 영역에 액세스할 수 있습니다.
+
+link:concept_cloud_central_accounts.html#users-workspaces-and-service-connectors["사용자, 작업 영역 및 서비스 커넥터에 대해 자세히 알아보십시오"].
+
+.단계
+. 계정 설정 * 을 클릭합니다.
+. 서비스 커넥터 * 를 클릭합니다.
+. 연결하려는 서비스 커넥터의 * 작업 영역 관리 * 를 클릭합니다.
+. 하나 이상의 작업 공간을 선택하고 * 적용 * 을 클릭합니다.
+
+
+작업 영역 관리자는 사용자가 작업 영역과 연결되어 있는 한 이제 연결된 작업 영역에 액세스할 수 있습니다.

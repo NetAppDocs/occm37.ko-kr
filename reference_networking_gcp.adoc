@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: reference_networking_gcp.html 
+keywords: networking, network, requirements, connection, connections, subnet, vpn, internet, proxy, HTTP, private, proxy server, routing, firewall, autosupport, connection, jump host, outbound, ports, tiering, data tiering, bucket, private google access, set up data tiering, data tiering requirement, gcp networking, google networking, shared vpc, host project, service project 
+summary: Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 Google 클라우드 플랫폼 네트워킹을 설정합니다. 
+---
+= GCP의 Cloud Volumes ONTAP에 대한 네트워킹 요구 사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 Google 클라우드 플랫폼 네트워킹을 설정합니다.
+
+공유 VPC::
++
+--
+공유 VPC를 사용하면 여러 프로젝트에서 가상 네트워크를 구성하고 중앙에서 관리할 수 있습니다. host project_에서 공유 VPC 네트워크를 설정하고 Cloud Manager 및 Cloud Volumes ONTAP 가상 머신 인스턴스를 _service project_에 구축할 수 있습니다. https://cloud.google.com/vpc/docs/shared-vpc["Google Cloud 설명서: 공유 VPC 개요"^].
+
+유일한 요구사항은 공유 VPC 호스트 프로젝트에서 Cloud Manager 서비스 계정에 다음과 같은 권한을 제공하는 것입니다.
+
+compute.w방화벽. * compute.networks.* compute.subnetworks. *
+
+Cloud Manager는 호스트 프로젝트에서 방화벽, VPC 및 서브넷을 쿼리하기 위해 이러한 권한이 필요합니다.
+
+--
+Cloud Volumes ONTAP에 대한 아웃바운드 인터넷 액세스::
++
+--
+라우팅 및 방화벽 정책은 Cloud Volumes ONTAP가 AutoSupport 메시지를 보낼 수 있도록 다음 엔드포인트에 대한 HTTP/HTTPS 트래픽을 허용해야 합니다.
+
+* https://support.netapp.com/aods/asupmessage 으로 문의하십시오
+* https://support.netapp.com/asupprod/post/1.0/postAsup 으로 문의하십시오
+
+
+--
+IP 주소 수입니다::
++
+--
+Cloud Manager는 GCP에서 Cloud Volumes ONTAP용 SVM 관리 LIF를 생성하지 않습니다.
+
+
+TIP: LIF는 물리적 포트와 연결된 IP 주소입니다. SnapCenter와 같은 관리 툴을 사용하려면 SVM 관리 LIF가 필요합니다.
+
+--
+방화벽 규칙:: Cloud Manager에서 방화벽 규칙을 생성할 수 있으므로 이 규칙을 생성할 필요가 없습니다. 직접 사용해야 하는 경우 을 참조하십시오 link:reference_firewall_rules_gcp.html["GCP 방화벽 규칙"].
+데이터 계층화를 위해 Cloud Volumes ONTAP에서 Google 클라우드 스토리지로 연결::
++
+--
+Cloud Manager에서 데이터 계층화를 설정하는 데 필요한 추가 단계는 를 참조하십시오 link:task_tiering.html["콜드 데이터를 저비용 오브젝트 스토리지로 계층화"].
+
+--
+다른 네트워크의 ONTAP 시스템에 대한 연결::
++
+--
+자세한 지침은 을 참조하십시오 https://cloud.google.com/vpn/docs/concepts/overview["Google Cloud 설명서: Cloud VPN 개요"^].
+
+--
+

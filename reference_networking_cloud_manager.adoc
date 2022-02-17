@@ -1,0 +1,274 @@
+---
+sidebar: sidebar 
+permalink: reference_networking_cloud_manager.html 
+keywords: networking, network, requirements, connection, connections, vpc, security group, security groups, subnets, proxy server, vpn, outbound, inbound, connections, jump host, URL, URLs, endpoints, endpoint, ports 
+summary: Cloud Manager가 AWS 또는 Microsoft Azure에 Cloud Volumes ONTAP 시스템을 구축할 수 있도록 네트워킹 설정 가장 중요한 단계는 다양한 엔드포인트에 대한 아웃바운드 인터넷 액세스를 보장하는 것입니다. 
+---
+= Cloud Manager의 네트워킹 요구사항
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Manager로 AWS, Microsoft Azure 또는 Google Cloud Platform에서 Cloud Volumes ONTAP 시스템을 구축할 수 있도록 네트워킹을 설정합니다. 가장 중요한 단계는 다양한 엔드포인트에 대한 아웃바운드 인터넷 액세스를 보장하는 것입니다.
+
+
+TIP: 네트워크에서 인터넷에 대한 모든 통신에 프록시 서버를 사용하는 경우 Cloud Manager에서 설정 중에 프록시를 지정하라는 메시지를 표시합니다. 설정 페이지에서 프록시 서버를 지정할 수도 있습니다. 을 참조하십시오 link:task_configuring_proxy.html["프록시 서버를 사용하도록 Cloud Manager 구성"].
+
+
+
+== 대상 네트워크에 연결
+
+Cloud Manager를 사용하려면 Cloud Volumes ONTAP를 구축할 VPC 및 VNets에 대한 네트워크 연결이 필요합니다.
+
+예를 들어 회사 네트워크에 Cloud Manager를 설치하는 경우 Cloud Volumes ONTAP를 실행하는 VPC 또는 VNET에 대한 VPN 연결을 설정해야 합니다.
+
+
+
+== 아웃바운드 인터넷 액세스
+
+Cloud Manager는 Cloud Volumes ONTAP를 배포 및 관리하기 위해 아웃바운드 인터넷 액세스를 필요로 합니다. 웹 브라우저에서 Cloud Manager에 액세스하고 Linux 호스트에서 Cloud Manager 설치 프로그램을 실행할 때도 아웃바운드 인터넷 액세스가 필요합니다.
+
+다음 섹션에서는 특정 끝점을 식별합니다.
+
+
+
+=== AWS의 Cloud Volumes ONTAP를 관리하는 엔드포인트
+
+AWS에서 Cloud Volumes ONTAP를 구축 및 관리할 때 Cloud Manager에서 다음 엔드포인트에 액세스하려면 아웃바운드 인터넷 액세스가 필요합니다.
+
+[cols="43,57"]
+|===
+| 엔드포인트 | 목적 
+
+
+ a| 
+AWS 서비스(amazonaws.com):
+
+* CloudFormation 을 참조하십시오
+* EC2(탄력적인 컴퓨팅 클라우드)
+* 키 관리 서비스(KMS)
+* 보안 토큰 서비스(STS)
+* S3(Simple Storage Service)
+
+
+정확한 끝점은 Cloud Volumes ONTAP를 배포하는 지역에 따라 다릅니다. https://docs.aws.amazon.com/general/latest/gr/rande.html["자세한 내용은 AWS 설명서를 참조하십시오."^]
+| Cloud Manager를 사용하여 AWS에서 Cloud Volumes ONTAP를 구축 및 관리할 수 있습니다. 
+
+
+| https://api.services.cloud.netapp.com:443 으로 문의하십시오 | NetApp Cloud Central에 API 요청 
+
+
+| https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com 으로 문의하십시오 | 소프트웨어 이미지, 매니페스트 및 템플릿에 대한 액세스를 제공합니다. 
+
+
+| https://cognito-idp.us-east-1.amazonaws.com \https://cognito-identity.us-east-1.amazonaws.com 으로 문의하십시오 | Cloud Manager에서 매니페스트, 템플릿 및 Cloud Volumes ONTAP 업그레이드 이미지에 액세스하고 다운로드할 수 있습니다. 
+
+
+| https://kinesis.us-east-1.amazonaws.com 으로 문의하십시오 | NetApp에서 감사 레코드의 데이터를 스트리밍할 수 있습니다. 
+
+
+| https://cloudmanager.cloud.netapp.com 으로 문의하십시오 | Cloud Central 계정을 포함한 Cloud Manager 서비스와 통신합니다. 
+
+
+| https://netapp-cloud-account.auth0.com 으로 문의하십시오 | NetApp Cloud Central과 통신하여 중앙 집중식 사용자 인증 제공 
+
+
+| https://w86yt021u5.execute-api.us-east-1.amazonaws.com/production/whitelist 으로 문의하십시오 | S3에 백업할 수 있는 허용 사용자 목록에 AWS 계정 ID를 추가하는 데 사용됩니다. 
+
+
+| https://support.netapp.com/aods/asupmessage \https://support.netapp.com/asupprod/post/1.0/postAsup 으로 문의하십시오 | NetApp AutoSupport과 커뮤니케이션: 
+
+
+| https://support.netapp.com/svcgw \https://support.netapp.com/ServiceGW/entitlement 으로 문의하십시오 | 시스템 라이센스 및 지원 등록을 위해 NetApp과 커뮤니케이션 
+
+
+| https://ipa-signer.cloudmanager.netapp.com 으로 문의하십시오 | Cloud Manager에서 라이센스 생성(예: Cloud Volumes ONTAP용 FlexCache 라이센스) 
+
+
+| https://packages.cloud.google.com/yum \https://github.com/NetApp/trident/releases/download/ 으로 문의하십시오 | Cloud Volumes ONTAP 시스템을 Kubernetes 클러스터에 연결하는 데 필요합니다. 엔드포인트를 통해 NetApp Trident를 설치할 수 있습니다. 
+
+
+ a| 
+다음과 같은 다양한 타사 위치:
+
+* https://repo1.maven.org/maven2 으로 문의하십시오
+* https://oss.sonatype.org/content/repositories 으로 문의하십시오
+* https://repo.typesafe.org 으로 문의하십시오
+
+
+타사 위치는 변경될 수 있습니다.
+| 업그레이드하는 동안 Cloud Manager는 타사 종속성을 위한 최신 패키지를 다운로드합니다. 
+|===
+
+
+=== Azure에서 Cloud Volumes ONTAP를 관리하는 엔드포인트에는
+
+Microsoft Azure에서 Cloud Volumes ONTAP를 배포 및 관리할 때 Cloud Manager는 다음 엔드포인트에 연락할 수 있는 아웃바운드 인터넷 액세스를 필요로 합니다.
+
+[cols="43,57"]
+|===
+| 엔드포인트 | 목적 
+
+
+| https://management.azure.com \https://login.microsoftonline.com 으로 문의하십시오 | Cloud Manager를 사용하면 대부분의 Azure 지역에서 Cloud Volumes ONTAP를 구축 및 관리할 수 있습니다. 
+
+
+| https://management.microsoftazure.de \https://login.microsoftonline.de 으로 문의하십시오 | Cloud Manager를 사용하여 Azure 독일 지역에서 Cloud Volumes ONTAP를 구축 및 관리할 수 있습니다. 
+
+
+| https://management.usgovcloudapi.net \https://login.microsoftonline.com 으로 문의하십시오 | Cloud Manager를 사용하여 Azure US Gov 지역에 Cloud Volumes ONTAP를 배포하고 관리할 수 있습니다. 
+
+
+| https://api.services.cloud.netapp.com:443 으로 문의하십시오 | NetApp Cloud Central에 API 요청 
+
+
+| https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com 으로 문의하십시오 | 소프트웨어 이미지, 매니페스트 및 템플릿에 대한 액세스를 제공합니다. 
+
+
+| https://cognito-idp.us-east-1.amazonaws.com \https://cognito-identity.us-east-1.amazonaws.com \https://sts.amazonaws.com 를 참조하십시오 | Cloud Manager에서 매니페스트, 템플릿 및 Cloud Volumes ONTAP 업그레이드 이미지에 액세스하고 다운로드할 수 있습니다. 
+
+
+| https://kinesis.us-east-1.amazonaws.com 으로 문의하십시오 | NetApp에서 감사 레코드의 데이터를 스트리밍할 수 있습니다. 
+
+
+| https://cloudmanager.cloud.netapp.com 으로 문의하십시오 | Cloud Central 계정을 포함한 Cloud Manager 서비스와 통신합니다. 
+
+
+| https://netapp-cloud-account.auth0.com 으로 문의하십시오 | NetApp Cloud Central과 통신하여 중앙 집중식 사용자 인증 제공 
+
+
+| https://mysupport.netapp.com 으로 문의하십시오 | NetApp AutoSupport과 커뮤니케이션: 
+
+
+| https://support.netapp.com/svcgw \https://support.netapp.com/ServiceGW/entitlement 으로 문의하십시오 | 시스템 라이센스 및 지원 등록을 위해 NetApp과 커뮤니케이션 
+
+
+| https://ipa-signer.cloudmanager.netapp.com 으로 문의하십시오 | Cloud Manager에서 라이센스 생성(예: Cloud Volumes ONTAP용 FlexCache 라이센스) 
+
+
+| https://packages.cloud.google.com/yum \https://github.com/NetApp/trident/releases/download/ 으로 문의하십시오 | Cloud Volumes ONTAP 시스템을 Kubernetes 클러스터에 연결하는 데 필요합니다. 엔드포인트를 통해 NetApp Trident를 설치할 수 있습니다. 
+
+
+ a| 
+다음과 같은 다양한 타사 위치:
+
+* https://repo1.maven.org/maven2 으로 문의하십시오
+* https://oss.sonatype.org/content/repositories 으로 문의하십시오
+* https://repo.typesafe.org 으로 문의하십시오
+
+
+타사 위치는 변경될 수 있습니다.
+| 업그레이드하는 동안 Cloud Manager는 타사 종속성을 위한 최신 패키지를 다운로드합니다. 
+|===
+
+
+=== GCP에서 Cloud Volumes ONTAP를 관리할 엔드포인트에는
+
+GCP에서 Cloud Volumes ONTAP를 구축 및 관리할 때 Cloud Manager는 다음 엔드포인트에 연결할 수 있는 아웃바운드 인터넷 액세스를 필요로 합니다.
+
+[cols="43,57"]
+|===
+| 엔드포인트 | 목적 
+
+
+| https://www.googleapis.com 으로 문의하십시오 | Cloud Manager가 GCP에서 Cloud Volumes ONTAP를 구축 및 관리하기 위해 Google API에 연락할 수 있습니다. 
+
+
+| https://api.services.cloud.netapp.com:443 으로 문의하십시오 | NetApp Cloud Central에 API 요청 
+
+
+| https://cloud.support.netapp.com.s3.us-west-1.amazonaws.com 으로 문의하십시오 | 소프트웨어 이미지, 매니페스트 및 템플릿에 대한 액세스를 제공합니다. 
+
+
+| https://cognito-idp.us-east-1.amazonaws.com \https://cognito-identity.us-east-1.amazonaws.com \https://sts.amazonaws.com 를 참조하십시오 | Cloud Manager에서 매니페스트, 템플릿 및 Cloud Volumes ONTAP 업그레이드 이미지에 액세스하고 다운로드할 수 있습니다. 
+
+
+| https://kinesis.us-east-1.amazonaws.com 으로 문의하십시오 | NetApp에서 감사 레코드의 데이터를 스트리밍할 수 있습니다. 
+
+
+| https://cloudmanager.cloud.netapp.com 으로 문의하십시오 | Cloud Central 계정을 포함한 Cloud Manager 서비스와 통신합니다. 
+
+
+| https://netapp-cloud-account.auth0.com 으로 문의하십시오 | NetApp Cloud Central과 통신하여 중앙 집중식 사용자 인증 제공 
+
+
+| https://mysupport.netapp.com 으로 문의하십시오 | NetApp AutoSupport과 커뮤니케이션: 
+
+
+| https://support.netapp.com/svcgw \https://support.netapp.com/ServiceGW/entitlement 으로 문의하십시오 | 시스템 라이센스 및 지원 등록을 위해 NetApp과 커뮤니케이션 
+
+
+| https://ipa-signer.cloudmanager.netapp.com 으로 문의하십시오 | Cloud Manager에서 라이센스 생성(예: Cloud Volumes ONTAP용 FlexCache 라이센스) 
+
+
+| https://packages.cloud.google.com/yum \https://github.com/NetApp/trident/releases/download/ 으로 문의하십시오 | Cloud Volumes ONTAP 시스템을 Kubernetes 클러스터에 연결하는 데 필요합니다. 엔드포인트를 통해 NetApp Trident를 설치할 수 있습니다. 
+
+
+ a| 
+다음과 같은 다양한 타사 위치:
+
+* https://repo1.maven.org/maven2 으로 문의하십시오
+* https://oss.sonatype.org/content/repositories 으로 문의하십시오
+* https://repo.typesafe.org 으로 문의하십시오
+
+
+타사 위치는 변경될 수 있습니다.
+| 업그레이드하는 동안 Cloud Manager는 타사 종속성을 위한 최신 패키지를 다운로드합니다. 
+|===
+
+
+=== 웹 브라우저에서 액세스한 끝점입니다
+
+사용자는 웹 브라우저에서 Cloud Manager에 액세스해야 합니다. 웹 브라우저를 실행하는 컴퓨터는 다음 끝점에 연결되어 있어야 합니다.
+
+[cols="43,57"]
+|===
+| 엔드포인트 | 목적 
+
+
+| Cloud Manager 호스트  a| 
+Cloud Manager 콘솔을 로드하려면 웹 브라우저에서 호스트의 IP 주소를 입력해야 합니다.
+
+클라우드 공급자에 대한 연결에 따라 호스트에 할당된 프라이빗 IP 또는 공용 IP를 사용할 수 있습니다.
+
+* 개인 IP는 VPN이 있고 가상 네트워크에 직접 연결할 수 있는 경우 작동합니다
+* 공용 IP는 모든 네트워킹 시나리오에서 작동합니다
+
+
+어떤 경우든 보안 그룹 규칙이 승인된 IP 또는 서브넷에서의 액세스만 허용하도록 하여 네트워크 액세스를 보호해야 합니다.
+
+
+
+| https://auth0.com\https://cdn.auth0.com\https://netapp-cloud-account.auth0.com\https://services.cloud.netapp.com | 웹 브라우저는 NetApp Cloud Central을 통해 중앙 집중식 사용자 인증을 위해 이러한 엔드포인트에 연결됩니다. 
+
+
+| https://widget.intercom.io 으로 문의하십시오 | 제품 내에서 NetApp 클라우드 전문가와 상담할 수 있는 채팅을 제공합니다. 
+|===
+
+
+=== Linux 호스트에 Cloud Manager를 설치하기 위한 엔드포인트
+
+설치 프로세스 중에 Cloud Manager 설치 관리자가 다음 URL에 액세스해야 합니다.
+
+* http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm 으로 문의하십시오
+* https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm 으로 문의하십시오
+* https://s3.amazonaws.com/aws-cli/awscli-bundle.zip 으로 문의하십시오
+
+
+
+
+== 포트 및 보안 그룹
+
+* Cloud Central 또는 마켓플레이스 이미지에서 Cloud Manager를 배포하는 경우 다음을 참조하십시오.
++
+** link:reference_security_groups.html#rules-for-cloud-manager["AWS의 Cloud Manager에 대한 보안 그룹 규칙"]
+** link:reference_security_groups_azure.html#rules-for-cloud-manager["Azure의 Cloud Manager에 대한 보안 그룹 규칙"]
+** link:reference_firewall_rules_gcp.html#rules-for-cloud-manager["GCP의 Cloud Manager에 대한 방화벽 규칙"]
+
+
+* 기존 Linux 호스트에 Cloud Manager를 설치하는 경우 를 참조하십시오 link:reference_cloud_mgr_reqs.html["Cloud Manager 호스트 요구사항"].
+
