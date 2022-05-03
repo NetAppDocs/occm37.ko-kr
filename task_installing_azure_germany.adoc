@@ -6,6 +6,7 @@ summary: Azure Marketplace는 Azure Germany 지역에서는 제공되지 않으�
 ---
 = Azure 독일 지역에 Cloud Manager 설치
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

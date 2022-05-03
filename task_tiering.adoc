@@ -6,6 +6,7 @@ summary: 핫 데이터용 SSD 또는 HDD 성능 계층과 비활성 데이터의
 ---
 = 비활성 데이터를 저비용 오브젝트 스토리지로 계층화
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

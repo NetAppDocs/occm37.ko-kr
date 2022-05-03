@@ -6,6 +6,7 @@ summary: 초기 설정을 수행한 후 나중에 사용자, 작업 영역 및 �
 ---
 = Cloud Central 계정에서 작업 영역 및 사용자 관리
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

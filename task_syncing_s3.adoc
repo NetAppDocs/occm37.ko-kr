@@ -6,6 +6,7 @@ summary: NetApp Cloud Sync로 작업 환경을 통합하여 ONTAP 볼륨의 데�
 ---
 = Amazon S3에 데이터를 동기화하는 중입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

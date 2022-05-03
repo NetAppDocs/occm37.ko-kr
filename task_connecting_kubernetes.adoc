@@ -7,6 +7,7 @@ summary: Cloud Manager를 사용하면 Kubernetes 클러스터에 NetApp Trident
 ---
 = Kubernetes용 영구 스토리지로 ONTAP 사용
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -16,7 +17,7 @@ summary: Cloud Manager를 사용하면 Kubernetes 클러스터에 NetApp Trident
 [role="lead"]
 Cloud Manager는 의 구축을 자동화할 수 있습니다 https://netapp-trident.readthedocs.io/en/stable-v18.10/introduction.html["NetApp 트라이던트"^] Kubernetes 클러스터에서 컨테이너용 영구 스토리지로 ONTAP를 사용할 수 있습니다. 이 기능은 Cloud Volumes ONTAP 및 온프레미스 ONTAP 클러스터에서 작동합니다.
 
-이 단계를 완료하기 전에 해야 합니다 link:reference_before.html["Cloud Volumes ONTAP 시스템을 생성합니다"] 또는  수 있습니다.
+이 단계를 완료하기 전에 해야 합니다 link:reference_before.html["Cloud Volumes ONTAP 시스템을 생성합니다"] 또는 link:task_discovering_ontap.html["사내 ONTAP 클러스터를 검색합니다"] 수 있습니다.
 
 를 사용하여 Kubernetes 클러스터를 구축하는 경우 https://cloud.netapp.com/kubernetes-service["NetApp Kubernetes 서비스"^]Cloud Manager를 사용하면 NetApp Cloud Central 계정에서 클러스터를 자동으로 검색할 수 있습니다. 이 경우 처음 두 단계를 건너뛰고 3단계부터 시작합니다.
 

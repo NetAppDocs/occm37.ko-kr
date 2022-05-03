@@ -7,6 +7,7 @@ summary: GCP를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프
 ---
 = Google 클라우드 플랫폼에서 Cloud Volumes ONTAP 시작하기
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -26,7 +27,7 @@ GCP에서 Cloud Volumes ONTAP를 구축하려면 Cloud Manager를 Google Cloud P
 Cloud Manager 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 타겟 VPC에서 아웃바운드 인터넷 액세스를 지원합니다.
 
 [role="quick-margin-para"]
-이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 .
+이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 link:reference_networking_gcp.html["Cloud Volumes ONTAP"].
 
 
 
@@ -44,7 +45,7 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 6단계에서 이 서비스 계정을 Cloud Manager VM과 연결합니다.
 
 +
-** https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다. gcloud 명령줄을 사용해야 합니다.
+** https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml["GCP에 대한 Cloud Manager 정책입니다"^]. gcloud 명령줄을 사용해야 합니다.
 +
 이 YAML 파일에 포함된 사용 권한은 2a단계의 사용 권한과 다릅니다.
 

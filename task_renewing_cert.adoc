@@ -6,6 +6,7 @@ summary: Cloud Manager 웹 콘솔에 안전하게 액세스하려면 만료되�
 ---
 = Cloud Manager HTTPS 인증서를 갱신하는 중입니다
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

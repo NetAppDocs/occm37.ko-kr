@@ -6,6 +6,7 @@ summary: Cloud Manager를 처음 배포할 때 시스템에 인터넷에 액세�
 ---
 = 프록시 서버를 사용하도록 Cloud Manager 구성
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -7,6 +7,7 @@ summary: 몇 가지 간단한 단계를 완료하여 AWS에서 Cloud Volumes ONT
 ---
 = AWS에서 Cloud Volumes ONTAP 시작하기
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -22,7 +23,7 @@ AWS를 설정하고 NetApp Cloud Central에서 Cloud Manager 소프트웨어를 
 
 . Cloud Manager 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 타겟 VPC에서 아웃바운드 인터넷 액세스를 지원합니다.
 +
-이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 .
+이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 link:reference_networking_aws.html#general-aws-networking-requirements-for-cloud-volumes-ontap["Cloud Volumes ONTAP"].
 
 . VPC 엔드포인트를 S3 서비스로 설정합니다.
 +

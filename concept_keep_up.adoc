@@ -6,6 +6,7 @@ summary: Cloud Manager는 항상 실행 상태를 유지해야 합니다.
 ---
 = Cloud Manager의 지속적인 가동 및 실행
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

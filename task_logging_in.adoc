@@ -6,6 +6,7 @@ summary: Cloud Manager 시스템에 연결된 모든 웹 브라우저에서 Clou
 ---
 = Cloud Manager에 로그인
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

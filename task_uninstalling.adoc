@@ -6,6 +6,7 @@ summary: Cloud Manager에는 소프트웨어를 제거하여 문제를 해결하
 ---
 = Cloud Manager 제거 중
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

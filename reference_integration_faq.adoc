@@ -7,6 +7,7 @@ translate: false
 ---
 = 질문과 대답: Cloud Manager와 NetApp Cloud Central의 통합
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -7,6 +7,7 @@ translate: false
 ---
 = GCP의 방화벽 규칙
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

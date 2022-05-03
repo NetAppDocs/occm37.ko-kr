@@ -6,6 +6,7 @@ summary: 각 Cloud Manager 시스템은 NetApp Cloud Central 계정에 연결됩
 ---
 = Cloud Central 계정
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -46,7 +47,7 @@ NOTE: Cloud Central 계정 서비스에 연결하려면 Cloud Manager에서 _\ht
 
 Cloud Manager의 계정 설정 위젯을 사용하면 계정 관리자가 Cloud Central 계정을 관리할 수 있습니다. 방금 계정을 만든 경우 처음부터 다시 시작할 수 있습니다. 그러나 이미 계정을 설정한 경우에는 계정과 연결된 사용자, 작업 영역 및 서비스 커넥터가 _ALL_으로 표시됩니다.
 
-사용자::
+사용자:: Cloud Central 계정에 연결하는 NetApp Cloud Central 사용자입니다. 사용자를 계정과 연결하고 해당 계정에서 하나 이상의 작업 공간을 만들면 해당 사용자가 Cloud Manager에서 작업 환경을 만들고 관리할 수 있습니다.
 +
 --
 사용자를 연결할 때 역할을 할당합니다.
@@ -56,7 +57,7 @@ Cloud Manager의 계정 설정 위젯을 사용하면 계정 관리자가 Cloud 
 
 
 --
-작업 공간::
+작업 공간:: Cloud Manager에서 작업 공간은 다른 작업 환경과 _ 작업 환경 _ 의 수를 분리합니다. 계정 관리자가 해당 작업 영역에 관리자를 연결해야만 작업 영역 관리자가 작업 영역의 작업 환경에 액세스할 수 있습니다.
 +
 --
 작업 환경은 스토리지 시스템을 나타냅니다.
@@ -67,7 +68,7 @@ Cloud Manager의 계정 설정 위젯을 사용하면 계정 관리자가 Cloud 
 
 
 --
-서비스 커넥터::
+서비스 커넥터:: 서비스 커넥터는 Cloud Manager의 일부입니다. Cloud Central은 사용자 인터페이스와 같은 Cloud Manager 소프트웨어를 대부분 실행하며, Cloud Central이 연결하는 몇 가지 Cloud Central 서비스(auth0 및 Cloud Central 계정)를 제외합니다. 서비스 커넥터는 클라우드 공급업체에 구축된 가상 머신 인스턴스 또는 구성한 온프레미스 호스트에서 실행됩니다.
 +
 --
 둘 이상의 NetApp 클라우드 데이터 서비스에 서비스 커넥터를 사용할 수 있습니다. 예를 들어, Cloud Manager용 서비스 커넥터가 이미 있는 경우 Cloud Tiering 서비스를 설정할 때 해당 커넥터를 선택할 수 있습니다.

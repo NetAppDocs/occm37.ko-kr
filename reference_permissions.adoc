@@ -7,6 +7,7 @@ translate: false
 ---
 = Cloud Manager에서 클라우드 공급자 권한을 사용하는 방법
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

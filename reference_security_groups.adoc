@@ -7,6 +7,7 @@ translate: false
 ---
 = AWS의 보안 그룹 규칙
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

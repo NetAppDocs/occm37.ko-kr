@@ -6,6 +6,7 @@ summary: NetApp Cloud Central은 NetApp 클라우드 데이터 서비스에 액�
 ---
 = NetApp Cloud Central에서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -7,6 +7,7 @@ translate: false
 ---
 = 더 빠른 버전의 Cloud Manager 설명서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

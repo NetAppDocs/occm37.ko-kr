@@ -6,6 +6,7 @@ summary: Azure Government Marketplace에서 Cloud Manager를 구축한 다음 Cl
 ---
 = Azure 미국 정부 지역에서 Cloud Manager 구축
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

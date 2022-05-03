@@ -6,6 +6,7 @@ summary: 자체 호스트에 Cloud Manager를 설치하는 경우 운영 체제 
 ---
 = Cloud Manager 호스트 요구사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -59,7 +60,7 @@ CPU:: 코어 2개가 있는 경우 2.27GHz 이상
 RAM:: 4GB
 사용 가능한 디스크 공간:: 50GB
 아웃바운드 인터넷 액세스:: Cloud Manager를 설치할 때와 Cloud Manager를 사용하여 Cloud Volumes ONTAP를 구축할 때는 아웃바운드 인터넷 액세스가 필요합니다. 끝점 목록은 을 참조하십시오 link:reference_networking_cloud_manager.html["Cloud Manager의 네트워킹 요구사항"].
-포트::
+포트:: 다음 포트를 사용할 수 있어야 합니다.
 +
 --
 * HTTP 액세스용 80

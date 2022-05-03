@@ -6,6 +6,7 @@ summary: Cloud Manager에서 직접 Azure NetApp Files용 NFS 볼륨을 보고 �
 ---
 = Azure NetApp Files의 볼륨 관리
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

@@ -6,6 +6,7 @@ summary: NetApp Cloud Central을 사용하여 Azure에 Cloud Manager를 배포�
 ---
 = Azure 마켓플레이스에서 Cloud Manager 구축
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -15,7 +16,7 @@ summary: NetApp Cloud Central을 사용하여 Azure에 Cloud Manager를 배포�
 [role="lead"]
 Azure에서 Cloud Manager를 구축하는 것이 가장 좋습니다 https://cloud.netapp.com["NetApp Cloud Central에서"^]필요한 경우 Azure 마켓플레이스에서 구축할 수 있습니다.
 
-Cloud Manager를 구축할 수 있는 별도의 지침이 제공됩니다 link:task_installing_azure_gov.html["Azure 미국 정부 지역"] 및 IN .
+Cloud Manager를 구축할 수 있는 별도의 지침이 제공됩니다 link:task_installing_azure_gov.html["Azure 미국 정부 지역"] 및 IN link:task_installing_azure_germany.html["Azure 독일 지역"].
 
 
 TIP: Azure Marketplace에서 Cloud Manager를 구축한 경우에도 Cloud Manager는 NetApp Cloud Central과 통합됩니다. link:concept_cloud_central.html["통합에 대해 자세히 알아보십시오"].

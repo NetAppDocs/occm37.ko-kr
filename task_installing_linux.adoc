@@ -6,6 +6,7 @@ summary: Cloud Manager를 구축하는 가장 일반적인 방법은 Cloud Centr
 ---
 = 기존 Linux 호스트에 Cloud Manager 설치
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -113,7 +114,7 @@ image:screenshot_set_up_cloud_manager.gif["Cloud Central 계정을 선택하고 
 * Azure(Azure): link:task_adding_azure_accounts.html["Azure 계정을 설정한 다음 Cloud Manager에 추가합니다"].
 * GCP: Cloud Manager가 프로젝트에서 Cloud Volumes ONTAP 시스템을 생성하고 관리하는 데 필요한 권한을 가진 서비스 계정을 설정합니다.
 +
-.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다.
+.. https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["GCP에서 역할을 생성합니다"^] 여기에는 에 정의된 권한이 포함됩니다 https://occm-sample-policies.s3.amazonaws.com/Policy_for_Cloud_Manager_3.8.0_GCP.yaml["GCP에 대한 Cloud Manager 정책입니다"^].
 .. https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["GCP 서비스 계정을 생성하고 방금 생성한 사용자 지정 역할을 적용합니다"^].
 .. https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes["이 서비스 계정을 Cloud Manager VM에 연결합니다"^].
 .. 다른 프로젝트에 Cloud Volumes ONTAP를 배포하려는 경우 https://cloud.google.com/iam/docs/granting-changing-revoking-access#granting-console["Cloud Manager 역할을 가진 서비스 계정을 해당 프로젝트에 추가하여 액세스 권한을 부여합니다"^]. 각 프로젝트에 대해 이 단계를 반복해야 합니다.

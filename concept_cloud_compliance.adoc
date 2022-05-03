@@ -6,6 +6,7 @@ summary: '클라우드 규정 준수 는 AWS 및 Azure의 Cloud Volumes ONTAP를
 ---
 = 클라우드 규정 준수에 대해 알아보십시오
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

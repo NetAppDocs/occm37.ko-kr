@@ -7,6 +7,7 @@ summary: 시작하기 전에 Cloud Manager 및 Cloud Volumes ONTAP 구축 옵션
 = 구축 개요
 :toc: macro
 :hardbreaks:
+:allow-uri-read: 
 :toc: 
 :nofooter: 
 :icons: font
@@ -100,7 +101,7 @@ NOTE: GCP 마켓플레이스에서 Google Cloud에 Cloud Manager를 구축할 �
 
 Cloud Manager를 시작 및 실행한 후 클라우드 공급자에 Cloud Volumes ONTAP 구축을 시작할 수 있습니다.
 
-link:task_getting_started_aws.html["AWS 시작하기"], , 및  Cloud Volumes ONTAP를 빠르게 시작하고 실행하기 위한 지침을 제공합니다. 추가 도움말은 다음을 참조하십시오.
+link:task_getting_started_aws.html["AWS 시작하기"], link:task_getting_started_azure.html["Azure에서 시작하기"], 및 link:task_getting_started_gcp.html["GCP에서 시작 중입니다"] Cloud Volumes ONTAP를 빠르게 시작하고 실행하기 위한 지침을 제공합니다. 추가 도움말은 다음을 참조하십시오.
 
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_aws_97.html["AWS에서 Cloud Volumes ONTAP 9.7 구성 지원"^]
 * https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_configs_azure_97.html["Azure에서 Cloud Volumes ONTAP 9.7 구성 지원"^]

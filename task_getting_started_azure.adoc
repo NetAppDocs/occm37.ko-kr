@@ -7,6 +7,7 @@ summary: 몇 가지 간단한 단계를 완료하여 Azure에서 Cloud Volumes O
 ---
 = Azure에서 Cloud Volumes ONTAP 시작하기
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -14,7 +15,7 @@ summary: 몇 가지 간단한 단계를 완료하여 Azure에서 Cloud Volumes O
 
 
 [role="lead"]
-Azure를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프트웨어를 배포하여 Cloud Volumes ONTAP를 시작하십시오. Cloud Manager를 구축할 수 있는 별도의 지침이 제공됩니다 link:task_installing_azure_gov.html["Azure 미국 정부 지역"] 및 IN .
+Azure를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프트웨어를 배포하여 Cloud Volumes ONTAP를 시작하십시오. Cloud Manager를 구축할 수 있는 별도의 지침이 제공됩니다 link:task_installing_azure_gov.html["Azure 미국 정부 지역"] 및 IN link:task_installing_azure_germany.html["Azure 독일 지역"].
 
 
 
@@ -24,7 +25,7 @@ Azure를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프트웨�
 클라우드 관리자 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 대상 VNET에서 아웃바운드 인터넷 액세스를 활성화합니다.
 
 [role="quick-margin-para"]
-이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 .
+이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 link:reference_networking_azure.html["Cloud Volumes ONTAP"].
 
 
 

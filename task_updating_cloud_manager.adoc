@@ -6,6 +6,7 @@ summary: Cloud Manager를 최신 버전으로 업데이트하거나 NetApp 직�
 ---
 = Cloud Manager 업데이트 중
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

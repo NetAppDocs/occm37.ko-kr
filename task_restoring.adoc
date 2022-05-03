@@ -6,6 +6,7 @@ summary: NetApp Cloud Central 고객은 Cloud Manager 구성을 쉽게 복원할
 ---
 = Cloud Manager 복원 중
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

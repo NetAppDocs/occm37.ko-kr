@@ -6,6 +6,7 @@ summary: Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 G
 ---
 = GCP의 Cloud Volumes ONTAP에 대한 네트워킹 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -15,7 +16,7 @@ summary: Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 G
 [role="lead"]
 Cloud Volumes ONTAP 시스템이 올바르게 작동할 수 있도록 Google 클라우드 플랫폼 네트워킹을 설정합니다.
 
-공유 VPC::
+공유 VPC:: Cloud Manager 및 Cloud Volumes ONTAP는 Google 클라우드 플랫폼 공유 VPC에서 지원됩니다.
 +
 --
 공유 VPC를 사용하면 여러 프로젝트에서 가상 네트워크를 구성하고 중앙에서 관리할 수 있습니다. host project_에서 공유 VPC 네트워크를 설정하고 Cloud Manager 및 Cloud Volumes ONTAP 가상 머신 인스턴스를 _service project_에 구축할 수 있습니다. https://cloud.google.com/vpc/docs/shared-vpc["Google Cloud 설명서: 공유 VPC 개요"^].
@@ -27,7 +28,7 @@ compute.w방화벽. * compute.networks.* compute.subnetworks. *
 Cloud Manager는 호스트 프로젝트에서 방화벽, VPC 및 서브넷을 쿼리하기 위해 이러한 권한이 필요합니다.
 
 --
-Cloud Volumes ONTAP에 대한 아웃바운드 인터넷 액세스::
+Cloud Volumes ONTAP에 대한 아웃바운드 인터넷 액세스:: Cloud Volumes ONTAP에서 스토리지 상태를 능동적으로 모니터링하는 NetApp AutoSupport에 메시지를 보내려면 아웃바운드 인터넷 액세스가 필요합니다.
 +
 --
 라우팅 및 방화벽 정책은 Cloud Volumes ONTAP가 AutoSupport 메시지를 보낼 수 있도록 다음 엔드포인트에 대한 HTTP/HTTPS 트래픽을 허용해야 합니다.
@@ -37,7 +38,7 @@ Cloud Volumes ONTAP에 대한 아웃바운드 인터넷 액세스::
 
 
 --
-IP 주소 수입니다::
+IP 주소 수입니다:: Cloud Manager는 GCP의 Cloud Volumes ONTAP에 5개의 IP 주소를 할당합니다.
 +
 --
 Cloud Manager는 GCP에서 Cloud Volumes ONTAP용 SVM 관리 LIF를 생성하지 않습니다.
@@ -47,13 +48,13 @@ TIP: LIF는 물리적 포트와 연결된 IP 주소입니다. SnapCenter와 같�
 
 --
 방화벽 규칙:: Cloud Manager에서 방화벽 규칙을 생성할 수 있으므로 이 규칙을 생성할 필요가 없습니다. 직접 사용해야 하는 경우 을 참조하십시오 link:reference_firewall_rules_gcp.html["GCP 방화벽 규칙"].
-데이터 계층화를 위해 Cloud Volumes ONTAP에서 Google 클라우드 스토리지로 연결::
+데이터 계층화를 위해 Cloud Volumes ONTAP에서 Google 클라우드 스토리지로 연결:: 콜드 데이터를 Google 클라우드 스토리지 버킷에 계층화하려면 Cloud Volumes ONTAP가 상주하는 서브넷이 프라이빗 Google 액세스용으로 구성되어야 합니다. 자세한 지침은 을 참조하십시오 https://cloud.google.com/vpc/docs/configure-private-google-access["Google Cloud 설명서: 개인 Google Access 구성"^].
 +
 --
 Cloud Manager에서 데이터 계층화를 설정하는 데 필요한 추가 단계는 를 참조하십시오 link:task_tiering.html["콜드 데이터를 저비용 오브젝트 스토리지로 계층화"].
 
 --
-다른 네트워크의 ONTAP 시스템에 대한 연결::
+다른 네트워크의 ONTAP 시스템에 대한 연결:: GCP의 Cloud Volumes ONTAP 시스템과 다른 네트워크의 ONTAP 시스템 간에 데이터를 복제하려면 VPC와 기업 네트워크 같은 다른 네트워크 간에 VPN 연결이 있어야 합니다.
 +
 --
 자세한 지침은 을 참조하십시오 https://cloud.google.com/vpn/docs/concepts/overview["Google Cloud 설명서: Cloud VPN 개요"^].
