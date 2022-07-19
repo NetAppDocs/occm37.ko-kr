@@ -85,8 +85,8 @@ NetApp 스토리지 효율성 기능은 다음과 같은 이점을 제공합니�
 
 시스템을 사이징하고 입력해야 하는 네트워크 정보를 검토하여 AWS에서 Cloud Volumes ONTAP 구축을 계획하십시오.
 
-* <<Sizing your system in AWS>>
-* <<AWS network information worksheet>>
+*  your system in AWS
+*  network information worksheet
 
 
 
@@ -210,8 +210,8 @@ AWS에서 Cloud Volumes ONTAP를 시작할 때 VPC 네트워크에 대한 세부
 
 시스템을 사이징하고 입력해야 하는 네트워크 정보를 검토하여 Azure에서 Cloud Volumes ONTAP 배포를 계획하십시오.
 
-* <<Sizing your system in Azure>>
-* <<Azure network information worksheet>>
+*  your system in Azure
+*  network information worksheet
 
 
 
@@ -291,8 +291,8 @@ Azure에서 Cloud Volumes ONTAP를 구축할 때는 가상 네트워크에 대�
 
 시스템을 사이징하고 입력해야 하는 네트워크 정보를 검토하여 Google 클라우드 플랫폼에 Cloud Volumes ONTAP 배포를 계획하십시오.
 
-* <<Sizing your system in GCP>>
-* <<GCP network information worksheet>>
+*  your system in GCP
+*  network information worksheet
 
 
 

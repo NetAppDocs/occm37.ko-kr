@@ -27,8 +27,8 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html["3.4의 새로
 
 이 업데이트에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-* <<Cloud Volumes ONTAP 9.7>>
-* <<Cloud Compliance for Cloud Volumes ONTAP>>
+*  Volumes ONTAP 9.7
+*  Compliance for Cloud Volumes ONTAP
 
 
 
@@ -55,11 +55,11 @@ link:concept_cloud_compliance.html["클라우드 규정 준수 에 대해 자세
 
 Cloud Manager 3.7.5에는 다음과 같은 향상된 기능이 포함되어 있습니다.
 
-* <<High write speed for Cloud Volumes ONTAP in GCP>>
-* <<On-prem ONTAP clusters as persistent storage for Kubernetes>>
-* <<Latest Trident version for Kubernetes>>
-* <<Support for Azure general-purpose v2 storage accounts>>
-* <<Prefixes in Azure storage account names using APIs>>
+*  write speed for Cloud Volumes ONTAP in GCP
+*  ONTAP clusters as persistent storage for Kubernetes
+*  Trident version for Kubernetes
+*  for Azure general-purpose v2 storage accounts
+*  in Azure storage account names using APIs
 
 
 
@@ -110,12 +110,12 @@ link:api.html["API 사용에 대한 자세한 내용은 API 개발자 가이드 
 
 Cloud Manager 3.7.4에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-* <<Support for Azure NetApp Files>>
-* <<Cloud Volumes ONTAP for GCP enhancements>>
-* <<Backup to S3 enhancement>>
-* <<Encryption of boot and root disks in AWS>>
-* <<Support for the AWS Bahrain region>>
-* <<Support for the Azure UAE North region>>
+*  for Azure NetApp Files
+*  Volumes ONTAP for GCP enhancements
+*  to S3 enhancement
+*  of boot and root disks in AWS
+*  for the AWS Bahrain region
+*  for the Azure UAE North region
 
 
 
@@ -239,9 +239,9 @@ link:task_backup_to_s3.html["시작하는 방법을 알아보십시오"].
 
 Cloud Manager 3.7.3에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-* <<Discovery and management of Cloud Volumes Service for AWS>>
-* <<New subscription required in the AWS Marketplace>>
-* <<Support for AWS GovCloud (US-East)>>
+*  and management of Cloud Volumes Service for AWS
+*  subscription required in the AWS Marketplace
+*  for AWS GovCloud (US-East)
 
 
 
@@ -282,11 +282,11 @@ BYOL(Google Cloud Platform)로 라이센스를 구매하면 Cloud Volumes ONTAP�
 
 == Cloud Manager 3.7.2(2019년 8월 5일)
 
-* <<FlexCache licenses>>
-* <<Kubernetes storage classes for iSCSI>>
-* <<Management of inodes>>
-* <<Support for the Hong Kong region in AWS>>
-* <<Support for the Australia Central regions in Azure>>
+*  licenses
+*  storage classes for iSCSI
+*  of inodes
+*  for the Hong Kong region in AWS
+*  for the Australia Central regions in Azure
 
 
 
@@ -370,9 +370,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html["Cloud V
 
 == Cloud Manager 3.7(2019년 6월 5일)
 
-* <<Support for upcoming Cloud Volumes ONTAP 9.6 release>>
-* <<NetApp Cloud Central accounts>>
-* <<Backup and restore with the Cloud Backup Service>>
+*  for upcoming Cloud Volumes ONTAP 9.6 release
+*  Cloud Central accounts
+*  and restore with the Cloud Backup Service
 
 
 

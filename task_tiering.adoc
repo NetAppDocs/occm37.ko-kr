@@ -29,9 +29,9 @@ summary: 핫 데이터용 SSD 또는 HDD 성능 계층과 비활성 데이터의
 
 ==== Cloud Volumes ONTAP와 오브젝트 스토리지 간의 연결을 보장합니다
 
-* AWS의 경우 S3에 VPC 엔드 포인트가 필요합니다. <<Requirements for tiering data in AWS,자세한 정보>>.
-* Azure의 경우 Cloud Manager에 필요한 권한이 있으면 작업을 수행할 필요가 없습니다. <<Requirements for tiering data in Microsoft Azure,자세한 정보>>.
-* GCP의 경우 Cloud Manager에 GCP 계정을 추가하고 프라이빗 Google Access의 서브넷을 구성해야 합니다. <<Requirements for tiering data in Google Cloud Platform,자세한 정보>>.
+* AWS의 경우 S3에 VPC 엔드 포인트가 필요합니다.  for tiering data in AWS,자세한 정보.
+* Azure의 경우 Cloud Manager에 필요한 권한이 있으면 작업을 수행할 필요가 없습니다.  for tiering data in Microsoft Azure,자세한 정보.
+* GCP의 경우 Cloud Manager에 GCP 계정을 추가하고 프라이빗 Google Access의 서브넷을 구성해야 합니다.  for tiering data in Google Cloud Platform,자세한 정보.
 
 
 
