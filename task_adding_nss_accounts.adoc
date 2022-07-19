@@ -18,7 +18,7 @@ BYOL 시스템을 구축하려면 NetApp Support 사이트 계정을 Cloud Manag
 
 다음 비디오에서 Cloud Manager에 NetApp Support 사이트 계정을 추가하는 방법을 알아보십시오. 또는 아래로 스크롤하여 단계를 읽습니다.
 
-video::V2fLTyztqYQ[youtube, width=848,height=480]
+video::V2fLTyztqYQ[youtube,width=848,height=480]
 .단계
 . 아직 NetApp Support 사이트 계정이 없는 경우 http://now.netapp.com/newuser/["1인 등록"^].
 . Cloud Manager 콘솔의 오른쪽 상단에서 설정 아이콘을 클릭하고 * 클라우드 공급자 및 지원 계정 * 을 선택합니다.

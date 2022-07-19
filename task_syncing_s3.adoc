@@ -55,7 +55,7 @@ Cloud Manager가 S3 기능으로 동기화되거나 일반적으로 Cloud Sync�
 
 Cloud Manager에서 Amazon S3에 볼륨을 직접 동기화하려면 작업 환경을 Cloud Sync 서비스와 통합해야 합니다.
 
-video::3hOtLs70_xE[youtube, width=848,height=480]
+video::3hOtLs70_xE[youtube,width=848,height=480]
 .단계
 . 작업 환경을 열고 * S3로 동기화 * 를 클릭합니다.
 . 동기화 * 를 클릭하고 화면의 지시에 따라 데이터를 S3로 동기화합니다.
