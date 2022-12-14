@@ -23,4 +23,5 @@ Azure 마켓플레이스는 Azure 독일 지역에서 사용할 수 없으므로
 . link:task_adding_azure_accounts.html["서비스 보안 주체를 사용하여 Cloud Manager에 Azure 권한을 부여합니다"].
 
 
+.작업을 마친 후
 Cloud Manager는 이제 다른 지역과 마찬가지로 Azure 독일 지역에 Cloud Volumes ONTAP를 구축할 준비가 되었습니다. 그러나 먼저 추가 설정을 수행할 수 있습니다.

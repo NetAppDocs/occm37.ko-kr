@@ -45,4 +45,5 @@ AWS 키를 사용하여 새로운 Cloud Manager 시스템에서 검색할 기존
 
 
 
+.결과
 이제 Cloud Manager 구성이 계정, 설정 및 작업 환경과 함께 복원됩니다.

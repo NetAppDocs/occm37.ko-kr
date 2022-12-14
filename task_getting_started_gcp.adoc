@@ -21,7 +21,7 @@ GCP에서 Cloud Volumes ONTAP를 구축하려면 Cloud Manager를 Google Cloud P
 
 
 
-=== 네트워크 설정
+=== image:number1.png["1번"] 네트워크 설정
 
 [role="quick-margin-para"]
 Cloud Manager 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 타겟 VPC에서 아웃바운드 인터넷 액세스를 지원합니다.
@@ -31,11 +31,12 @@ Cloud Manager 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수
 
 
 
-=== GCP 권한 및 프로젝트 설정
+=== image:number2.png["2번"] GCP 권한 및 프로젝트 설정
 
 [role="quick-margin-para"]
 두 가지 권한 집합이 있는지 확인합니다.
 
+[role="quick-margin-list"]
 . NetApp Cloud Central에서 Cloud Manager를 배포하는 GCP 사용자에게 의 권한이 있는지 확인합니다 https://occm-sample-policies.s3.amazonaws.com/Setup_As_Service_3.7.3_GCP.yaml["GCP에 대한 Cloud Central 정책"^].
 +
 https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-gcloud["YAML 파일을 사용하여 맞춤형 역할을 생성할 수 있습니다"^] 그런 다음 사용자에게 연결합니다. gcloud 명령줄을 사용하여 역할을 생성해야 합니다.
@@ -57,11 +58,12 @@ https://cloud.google.com/iam/docs/creating-custom-roles#iam-custom-roles-create-
 
 
 
-=== 데이터 계층화에 GCP를 설정합니다
+=== image:number3.png["3번"] 데이터 계층화에 GCP를 설정합니다
 
 [role="quick-margin-para"]
 Cloud Volumes ONTAP 9.7에서 저렴한 오브젝트 스토리지(Google 클라우드 스토리지 버킷)로 콜드 데이터를 계층화하려면 다음 두 가지 요구사항을 충족해야 합니다.
 
+[role="quick-margin-list"]
 . https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["서비스 계정을 생성합니다"^] 사전 정의된 스토리지 관리 역할과 Cloud Manager 서비스 계정이 있는 사용자입니다.
 +
 Cloud Volumes ONTAP 작업 환경을 생성할 때 나중에 이 서비스 계정을 선택해야 합니다. 이 서비스 계정은 2단계에서 만든 서비스 계정과 다릅니다.
@@ -74,11 +76,12 @@ Cloud Volumes ONTAP 9.6과 함께 데이터 계층화를 사용하려면 link:ta
 
 
 
-=== Google Cloud API를 활성화합니다
+=== image:number4.png["4번"] Google Cloud API를 활성화합니다
 
 [role="quick-margin-para"]
 https://cloud.google.com/apis/docs/getting-started#enabling_apis["프로젝트에서 다음 Google Cloud API를 활성화합니다"^]. 이러한 API는 Cloud Manager 및 Cloud Volumes ONTAP를 구축하는 데 필요합니다.
 
+[role="quick-margin-list"]
 * Cloud Deployment Manager V2 API
 * Cloud Resource Manager API를 참조하십시오
 * 컴퓨팅 엔진 API
@@ -87,14 +90,14 @@ https://cloud.google.com/apis/docs/getting-started#enabling_apis["프로젝트�
 
 
 
-=== GCP Marketplace에서 구독하십시오
+=== image:number5.png["5번"] GCP Marketplace에서 구독하십시오
 
 [role="quick-margin-para"]
 https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager["GCP Marketplace에서 Cloud Volumes ONTAP를 구독하십시오"^] 무료 평가판이 종료된 후에도 서비스가 중단되지 않도록 합니다. 생성하는 모든 Cloud Volumes ONTAP PAYGO 시스템에 대해 이 구독 요금제로 요금이 부과됩니다.
 
 
 
-=== NetApp Cloud Central에서 Cloud Manager를 실행합니다
+=== image:number6.png["6번"] NetApp Cloud Central에서 Cloud Manager를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Volumes ONTAP를 구축 및 관리하려면 Cloud Manager 소프트웨어가 필요합니다. GCP에서 Cloud Manager 인스턴스를 시작하는 데 몇 분 밖에 걸리지 않습니다 https://cloud.netapp.com["Cloud Central을 참조하십시오"^].
@@ -104,7 +107,7 @@ Cloud Volumes ONTAP를 구축 및 관리하려면 Cloud Manager 소프트웨어�
 
 
 
-=== Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
+=== image:number7.png["7번"] Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Manager가 준비되면 생성 을 클릭하고 구축할 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. 25분 후 첫 번째 Cloud Volumes ONTAP 시스템이 가동되어 실행 중이어야 합니다.

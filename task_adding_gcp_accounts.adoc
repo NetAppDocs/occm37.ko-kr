@@ -62,6 +62,7 @@ image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설
 . 정책 요구 사항이 충족되었는지 확인한 다음 * 계정 생성 * 을 클릭합니다.
 
 
+.다음 단계
 이제 개별 볼륨을 생성, 수정 또는 복제할 때 개별 볼륨에서 데이터 계층화를 설정할 수 있습니다. 자세한 내용은 을 참조하십시오 link:task_tiering.html["비활성 데이터를 저비용 오브젝트 스토리지로 계층화"].
 
 그러나 하기 전에 Cloud Volumes ONTAP가 상주하는 서브넷이 개인 Google 액세스용으로 구성되어 있는지 확인하십시오. 자세한 지침은 을 참조하십시오 https://cloud.google.com/vpc/docs/configure-private-google-access["Google Cloud 설명서: 개인 Google Access 구성"^].

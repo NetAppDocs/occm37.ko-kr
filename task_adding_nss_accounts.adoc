@@ -40,6 +40,7 @@ image:screenshot_settings_icon.gif["Cloud Manager 콘솔의 오른쪽 위에 설
 . 계정 만들기 * 를 클릭합니다
 
 
+.다음 단계
 이제 사용자는 새 Cloud Volumes ONTAP 시스템을 생성할 때와 기존 시스템을 등록할 때 계정을 선택할 수 있습니다.
 
 * link:task_deploying_otc_aws.html["AWS에서 Cloud Volumes ONTAP 실행"]

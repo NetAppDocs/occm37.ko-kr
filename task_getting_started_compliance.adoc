@@ -24,8 +24,9 @@ AWS 또는 Azure에서 Cloud Volumes ONTAP용 Cloud Compliance를 시작하려�
 
 
 
-==== 구성이 요구 사항을 충족할 수 있는지 확인합니다
+==== image:number1.png["1번"] 구성이 요구 사항을 충족할 수 있는지 확인합니다
 
+[role="quick-margin-list"]
 * 클라우드 규정 준수 인스턴스가 아웃바운드 인터넷 액세스를 가질 수 있는지 확인합니다.
 +
 Cloud Manager는 요청의 첫 번째 Cloud Volumes ONTAP 시스템과 동일한 VPC 또는 VNET에 인스턴스를 배포합니다.
@@ -36,19 +37,21 @@ Cloud Manager는 요청의 첫 번째 Cloud Volumes ONTAP 시스템과 동일한
 
 
 
-==== Cloud Volumes ONTAP에서 클라우드 규정 준수 지원
+==== image:number2.png["2번"] Cloud Volumes ONTAP에서 클라우드 규정 준수 지원
 
+[role="quick-margin-list"]
 * 새로운 작업 환경: 작업 환경을 생성할 때 Cloud Compliance를 사용하도록 설정해야 합니다(기본적으로 활성화됨).
 * 기존 작업 환경: * 규정 준수 * 를 클릭하고 작업 환경 목록을 필요에 따라 편집한 다음 * 준수 대시보드 표시 * 를 클릭합니다.
 
 
 
 
-==== 볼륨에 대한 액세스를 확인합니다
+==== image:number3.png["3번"] 볼륨에 대한 액세스를 확인합니다
 
 [role="quick-margin-para"]
 이제 Cloud Compliance를 사용하도록 설정했으므로 볼륨에 액세스할 수 있는지 확인합니다.
 
+[role="quick-margin-list"]
 * 클라우드 규정 준수 인스턴스에는 각 Cloud Volumes ONTAP 서브넷에 대한 네트워크 연결이 필요합니다.
 * Cloud Volumes ONTAP의 보안 그룹은 클라우드 규정 준수 인스턴스로부터 인바운드 연결을 허용해야 합니다.
 * NFS 볼륨 엑스포트 정책은 Cloud Compliance 인스턴스에서 액세스할 수 있어야 합니다.
@@ -60,8 +63,9 @@ Compliance * > * CIFS Scan Status * > * Edit CIFS Credentials * 를 클릭하고
 
 
 
-==== Cloud Manager와 클라우드 규정 준수 간 연결을 보장합니다
+==== image:number4.png["4번"] Cloud Manager와 클라우드 규정 준수 간 연결을 보장합니다
 
+[role="quick-margin-list"]
 * Cloud Manager의 보안 그룹은 포트 80을 통해 클라우드 규정 준수 인스턴스 간에 인바운드 및 아웃바운드 트래픽을 허용해야 합니다.
 * AWS 네트워크에서 인터넷 액세스에 NAT 또는 프록시를 사용하지 않는 경우 Cloud Manager의 보안 그룹은 클라우드 규정 준수 인스턴스에서 TCP 포트 3128을 통한 인바운드 트래픽을 허용해야 합니다.
 
@@ -125,6 +129,7 @@ image:screenshot_cloud_compliance.gif["작업 환경 마법사의 서비스 페�
 
 
 
+.결과
 Cloud Volumes ONTAP 시스템에서 클라우드 규정 준수를 지원합니다. Cloud Compliance를 처음 활성화한 경우 Cloud Manager는 클라우드 공급자에 Cloud Compliance 인스턴스를 배포합니다. 인스턴스를 사용할 수 있게 되면 생성한 각 볼륨에 기록된 데이터를 스캔하기 시작합니다.
 
 
@@ -156,6 +161,7 @@ image:screenshot_enable_compliance.gif["작업 환경을 선택한 후 작업 �
 
 
 
+.결과
 Cloud Compliance를 처음 활성화한 경우 Cloud Manager는 클라우드 공급자에 Cloud Compliance 인스턴스를 배포합니다.
 
 Cloud Compliance는 각 작업 환경에서 데이터 스캔을 시작합니다. Cloud Compliance에서 초기 스캔을 마치면 Compliance 대시보드에서 데이터를 사용할 수 있습니다. 소요되는 시간은 데이터 양에 따라 다릅니다. 몇 분 또는 몇 시간이 걸릴 수도 있습니다.

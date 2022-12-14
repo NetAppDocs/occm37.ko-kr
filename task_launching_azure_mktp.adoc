@@ -69,6 +69,7 @@ image:screenshot_set_up_cloud_manager.gif["Cloud Central 계정을 선택하고 
 
 
 
+.결과
 이제 Cloud Manager가 설치되고 설정되었습니다. Azure에서 Cloud Volumes ONTAP를 배포하기 전에 Azure 사용 권한을 부여해야 합니다.
 
 
@@ -125,4 +126,5 @@ NOTE: OnCommand Cloud Manager Operator는 에 제공되는 기본 이름입니�
 
 
 
+.결과
 이제 Cloud Manager에 Azure에서 Cloud Volumes ONTAP를 배포하고 관리하는 데 필요한 권한이 있습니다.

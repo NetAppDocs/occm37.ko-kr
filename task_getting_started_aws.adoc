@@ -19,8 +19,9 @@ AWS를 설정하고 NetApp Cloud Central에서 Cloud Manager 소프트웨어를 
 
 
 
-=== 네트워크 설정
+=== image:number1.png["1번"] 네트워크 설정
 
+[role="quick-margin-list"]
 . Cloud Manager 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 타겟 VPC에서 아웃바운드 인터넷 액세스를 지원합니다.
 +
 이 단계는 Cloud Manager가 아웃바운드 인터넷 액세스 없이 Cloud Volumes ONTAP를 구축할 수 없기 때문에 중요합니다. 아웃바운드 연결을 제한해야 하는 경우 의 끝점 목록을 참조하십시오 link:reference_networking_cloud_manager.html#outbound-internet-access["클라우드 관리자"] 및 link:reference_networking_aws.html#general-aws-networking-requirements-for-cloud-volumes-ontap["Cloud Volumes ONTAP"].
@@ -33,18 +34,19 @@ Cloud Volumes ONTAP의 콜드 데이터를 저비용 오브젝트 스토리지�
 
 
 
-=== 필요한 AWS 권한을 제공합니다
+=== image:number2.png["2번"] 필요한 AWS 권한을 제공합니다
 
 [role="quick-margin-para"]
 NetApp Cloud Central에서 Cloud Manager를 구축할 때 인스턴스를 배포할 수 있는 권한이 있는 AWS 계정을 사용해야 합니다.
 
+[role="quick-margin-list"]
 . AWS IAM 콘솔로 이동하여 의 내용을 복사하여 붙여 넣어 정책을 생성합니다 https://mysupport.netapp.com/cloudontap/iampolicies["AWS를 위한 NetApp Cloud Central 정책"^].
 . 정책을 IAM 사용자에게 연결합니다.
 
 
 
 
-=== AWS Marketplace에서 구독
+=== image:number3.png["3번"] AWS Marketplace에서 구독
 
 [role="quick-margin-para"]
 https://aws.amazon.com/marketplace/pp/B07QX2QLXX["AWS Marketplace에서 Cloud Manager를 구독하십시오"^] Cloud Volumes ONTAP 무료 평가판이 종료된 후에도 서비스가 중단되지 않도록 합니다. 새로 만드는 모든 Cloud Volumes ONTAP PAYGO 시스템 및 사용하는 각 추가 기능에 대해 이 구독 요금제가 부과됩니다.
@@ -54,14 +56,14 @@ BYOL(Bring Your Own License)하여 Cloud Volumes ONTAP를 시작하는 경우 ht
 
 
 
-=== NetApp Cloud Central에서 Cloud Manager를 실행합니다
+=== image:number4.png["4번"] NetApp Cloud Central에서 Cloud Manager를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Volumes ONTAP를 구축 및 관리하려면 Cloud Manager 소프트웨어가 필요합니다. Cloud Manager 인스턴스를 시작하는 데는 몇 분 밖에 걸리지 않습니다 https://cloud.netapp.com["Cloud Central을 참조하십시오"^].
 
 
 
-=== Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
+=== image:number5.png["5번"] Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Manager가 준비되면 생성 을 클릭하고 시작할 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. 25분 후 첫 번째 Cloud Volumes ONTAP 시스템이 가동되어 실행 중이어야 합니다.

@@ -19,7 +19,7 @@ Azure를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프트웨�
 
 
 
-=== 네트워크 설정
+=== image:number1.png["1번"] 네트워크 설정
 
 [role="quick-margin-para"]
 클라우드 관리자 및 Cloud Volumes ONTAP가 여러 엔드포인트에 연결할 수 있도록 대상 VNET에서 아웃바운드 인터넷 액세스를 활성화합니다.
@@ -29,11 +29,12 @@ Azure를 설정한 다음 NetApp Cloud Central에서 Cloud Manager 소프트웨�
 
 
 
-=== 필요한 Azure 권한을 제공합니다
+=== image:number2.png["2번"] 필요한 Azure 권한을 제공합니다
 
 [role="quick-margin-para"]
 NetApp Cloud Central에서 Cloud Manager를 구축할 때 Cloud Manager 가상 머신을 구축할 권한이 있는 Azure 계정을 사용해야 합니다.
 
+[role="quick-margin-list"]
 . 를 다운로드합니다 https://mysupport.netapp.com/cloudontap/iampolicies["Azure를 위한 NetApp Cloud Central 정책"^].
 . Azure 구독 ID를 "AssignableScopes" 필드에 추가하여 JSON 파일을 수정합니다.
 . JSON 파일을 사용하여 이름이 _Azure SetupAsService_인 Azure에서 사용자 지정 역할을 생성합니다.
@@ -45,14 +46,14 @@ NetApp Cloud Central에서 Cloud Manager를 구축할 때 Cloud Manager 가상 �
 
 
 
-=== NetApp Cloud Central에서 Cloud Manager를 실행합니다
+=== image:number3.png["3번"] NetApp Cloud Central에서 Cloud Manager를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Volumes ONTAP를 구축 및 관리하려면 Cloud Manager 소프트웨어가 필요합니다. Cloud Manager 인스턴스를 시작하는 데는 몇 분 밖에 걸리지 않습니다 https://cloud.netapp.com["Cloud Central을 참조하십시오"^].
 
 
 
-=== Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
+=== image:number4.png["4번"] Cloud Manager를 사용하여 Cloud Volumes ONTAP를 실행합니다
 
 [role="quick-margin-para"]
 Cloud Manager가 준비되면 생성 을 클릭하고 구축할 시스템 유형을 선택한 다음 마법사의 단계를 완료합니다. 25분 후 첫 번째 Cloud Volumes ONTAP 시스템이 가동되어 실행 중이어야 합니다.

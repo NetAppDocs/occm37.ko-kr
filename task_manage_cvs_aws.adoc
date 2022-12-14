@@ -54,6 +54,7 @@ image:screenshot_cvs_aws_details.gif["구성을 검색할 수 있는 Cloud Volum
 
 
 
+.결과
 이제 Cloud Manager에 작업 환경 페이지에 AWS용 Cloud Volumes Service 구성이 표시됩니다.
 
 image:screenshot_cvs_aws_cloud.gif["작업 환경 페이지의 Cloud Volumes Service for AWS 스크린샷"]
@@ -79,6 +80,7 @@ image:screenshot_cvs_discover_region.gif["\"다른 지역의 Cloud Volumes Servi
 
 
 
+.결과
 Cloud Manager는 선택한 지역의 클라우드 볼륨에 대한 정보를 검색합니다.
 
 

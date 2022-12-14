@@ -108,6 +108,7 @@ image:screenshot_set_up_cloud_manager.gif["Cloud Central 계정을 선택하고 
 
 
 
+.작업을 마친 후
 클라우드 관리자가 클라우드 공급자에 Cloud Volumes ONTAP을 배포할 수 있도록 권한 설정:
 
 * AWS: link:task_adding_aws_accounts.html["AWS 계정을 설정한 다음 Cloud Manager에 추가합니다"].

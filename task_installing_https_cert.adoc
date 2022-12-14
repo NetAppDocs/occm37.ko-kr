@@ -53,6 +53,7 @@ Cloud Manager는 인증서 서명 요청을 표시합니다.
 |===
 
 
+.결과
 Cloud Manager는 이제 CA 서명 인증서를 사용하여 보안 HTTPS 액세스를 제공합니다. 다음 이미지는 보안 액세스를 위해 구성된 Cloud Manager 시스템을 보여줍니다.
 
 image:screenshot_https_cert.gif["스크린샷: 서명된 인증서를 설치한 후 HTTPS 설정 페이지를 표시합니다. 이 페이지에는 인증서 속성과 인증서를 갱신할 수 있는 옵션이 표시됩니다."]

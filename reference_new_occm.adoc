@@ -27,8 +27,8 @@ link:https://docs.netapp.com/us-en/occm34/reference_new_occm.html["3.4의 새로
 
 이 업데이트에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-*  Volumes ONTAP 9.7
-*  Compliance for Cloud Volumes ONTAP
+* <<Cloud Volumes ONTAP 9.7>>
+* <<Cloud Volumes ONTAP의 클라우드 규정 준수>>
 
 
 
@@ -55,11 +55,11 @@ link:concept_cloud_compliance.html["클라우드 규정 준수 에 대해 자세
 
 Cloud Manager 3.7.5에는 다음과 같은 향상된 기능이 포함되어 있습니다.
 
-*  write speed for Cloud Volumes ONTAP in GCP
-*  ONTAP clusters as persistent storage for Kubernetes
-*  Trident version for Kubernetes
-*  for Azure general-purpose v2 storage accounts
-*  in Azure storage account names using APIs
+* <<GCP의 Cloud Volumes ONTAP에 대한 빠른 쓰기 속도>>
+* <<온프레미스 ONTAP 클러스터를 Kubernetes용 영구 스토리지로 사용합니다>>
+* <<Kubernetes용 최신 Trident 버전>>
+* <<Azure 범용 v2 스토리지 계정 지원>>
+* <<API를 사용하는 Azure 스토리지 계정 이름의 접두사>>
 
 
 
@@ -110,12 +110,12 @@ link:api.html["API 사용에 대한 자세한 내용은 API 개발자 가이드 
 
 Cloud Manager 3.7.4에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-*  for Azure NetApp Files
-*  Volumes ONTAP for GCP enhancements
-*  to S3 enhancement
-*  of boot and root disks in AWS
-*  for the AWS Bahrain region
-*  for the Azure UAE North region
+* <<Azure NetApp Files 지원>>
+* <<Cloud Volumes ONTAP for GCP 개선 사항>>
+* <<S3로 백업 향상>>
+* <<AWS에서 부팅 및 루트 디스크의 암호화>>
+* <<AWS 바레인 지역 지원>>
+* <<Azure UAE 북부 지역에 대한 지원>>
 
 
 
@@ -239,9 +239,9 @@ link:task_backup_to_s3.html["시작하는 방법을 알아보십시오"].
 
 Cloud Manager 3.7.3에는 다음과 같은 개선 사항이 포함되어 있습니다.
 
-*  and management of Cloud Volumes Service for AWS
-*  subscription required in the AWS Marketplace
-*  for AWS GovCloud (US-East)
+* <<Cloud Volumes Service for AWS 검색 및 관리>>
+* <<AWS 마켓플레이스에 새로운 구독이 필요합니다>>
+* <<AWS GovCloud(미국-동부) 지원>>
 
 
 
@@ -282,11 +282,11 @@ BYOL(Google Cloud Platform)로 라이센스를 구매하면 Cloud Volumes ONTAP�
 
 == Cloud Manager 3.7.2(2019년 8월 5일)
 
-*  licenses
-*  storage classes for iSCSI
-*  of inodes
-*  for the Hong Kong region in AWS
-*  for the Australia Central regions in Azure
+* <<FlexCache 라이센스>>
+* <<iSCSI용 Kubernetes 스토리지 클래스>>
+* <<inode 관리>>
+* <<AWS의 홍콩 지역 지원>>
+* <<Azure의 오스트레일리아 중앙 지역 지원>>
 
 
 
@@ -370,9 +370,9 @@ https://docs.netapp.com/us-en/cloud-volumes-ontap/reference_new_96.html["Cloud V
 
 == Cloud Manager 3.7(2019년 6월 5일)
 
-*  for upcoming Cloud Volumes ONTAP 9.6 release
-*  Cloud Central accounts
-*  and restore with the Cloud Backup Service
+* <<Cloud Volumes ONTAP 9.6 릴리스에 대한 지원 예정>>
+* <<NetApp Cloud Central 계정>>
+* <<Cloud Backup Service를 사용한 백업 및 복원>>
 
 
 
